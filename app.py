@@ -172,6 +172,8 @@ PAGE = """<!doctype html>
   .marvin { margin:0; width:130px; flex-shrink:0; }
   .marvin img { width:130px; }
   .marvin figcaption { color:var(--dim); font-size:.7rem; font-style:italic; }
+  .ytwrap { position:relative; width:100%; aspect-ratio:16/9; margin:.6rem 0; }
+  .ytwrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:8px; }
   @media (max-width:640px) { .tribute { flex-wrap:wrap; } }
 </style></head><body><main>
 <h1>🎼 Financial Symphony Generator</h1>
@@ -223,8 +225,10 @@ then tells you <em>the song</em>. Largely harmless.</p>
   <h3 style="margin:.4rem 0">🎵 This quarter's anthem</h3>
   <div id="song"></div>
   <div class="why" id="why"></div>
+  <div class="ytwrap"><iframe id="yt" title="anthem player" allowfullscreen
+       allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   <div id="runners" style="color:var(--dim);font-size:.9rem;margin-top:.4rem"></div>
-  <h3 style="margin:1rem 0 .4rem">🎻 Or hear the quarter itself</h3>
+  <h3 style="margin:1rem 0 .4rem">🎻 B-side: the quarter itself, synthesized</h3>
   <audio id="player" controls style="width:100%"></audio>
   <div style="color:var(--dim);font-size:.85rem" id="synthinfo"></div>
 </div>
@@ -298,8 +302,12 @@ async function judge() {
   document.getElementById('evidence').innerHTML = v.key_evidence.map(e=>'<li>'+e+'</li>').join('');
   document.getElementById('flags').innerHTML = v.red_flags.map(f=>'<div class="flag">⚠ '+f+'</div>').join('');
   document.getElementById('song').innerHTML = '«' + j.anthem.title + '» — ' + j.anthem.artist +
-    ' (' + j.anthem.era + ') &nbsp; <a target="_blank" href="' + j.anthem.youtube + '">▶ YouTube</a>';
+    ' (' + j.anthem.era + ') &nbsp; <a target="_blank" href="' + j.anthem.youtube + '">open on YouTube</a>';
   document.getElementById('why').textContent = j.anthem.why_it_fits;
+  // embedded YouTube search-playlist: plays the actual song via YouTube's
+  // own player and licenses — the legal way to "play it directly"
+  document.getElementById('yt').src = 'https://www.youtube.com/embed?listType=search&list=' +
+    encodeURIComponent(j.anthem.title + ' ' + j.anthem.artist);
   document.getElementById('runners').innerHTML = j.runners_up.length ?
     'Also considered: ' + j.runners_up.map(s=>'«'+s.title+'» ('+s.artist+')').join('; ') : '';
   document.getElementById('player').src = j.symphony.wav;
