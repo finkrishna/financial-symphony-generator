@@ -21,6 +21,8 @@ def load_bank():
 
 
 def youtube_url(song):
+    if song.get("yt"):
+        return f"https://www.youtube.com/watch?v={song['yt']}"
     q = urllib.parse.quote_plus(f"{song['title']} {song['artist']}")
     return f"https://www.youtube.com/results?search_query={q}"
 

@@ -154,7 +154,12 @@ def judge_offline(d):
                   and margins[0] - trough >= 0.02
                   and margins[-1] - trough >= 0.02)
 
-    if eps_surprise > 0 and (cash_conv < 0.6 or (one_offs and cash_conv < 0.8)):
+    # illusion: a "beat" that the cash doesn't back. Two routes in:
+    #  (a) positive surprise on hollow cash/one-offs
+    #  (b) spectacular headline growth with terrible cash conversion — the
+    #      gross-revenue illusion needs no analyst estimates to be visible
+    if (eps_surprise > 0 and (cash_conv < 0.6 or (one_offs and cash_conv < 0.8))) \
+            or (yoy > 0.30 and cash_conv < 0.6):
         mood = "illusion"
     elif yoy < -0.15 or eps_surprise < -0.15:
         mood = "shock"

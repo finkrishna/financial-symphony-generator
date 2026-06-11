@@ -1,112 +1,1328 @@
 {
-  "comment": "The AmhiSangeet songbank. moods: triumph|steady|grind|turnaround_hope|distress|illusion|shock. energy 0-1 matches verdict intensity. Curate freely — this file IS the product.",
-  "songs": [
-    {"title": "Chak De! India", "artist": "Sukhwinder Singh", "lang": "hi", "moods": ["triumph"], "energy": 0.95, "era": "2007", "why_it_fits": "The underdog delivered. Full team blowout quarter."},
-    {"title": "Zinda", "artist": "Siddharth Mahadevan (Bhaag Milkha Bhaag)", "lang": "hi", "moods": ["triumph"], "energy": 0.9, "era": "2013", "why_it_fits": "Earned the hard way — operating leverage finally kicking in."},
-    {"title": "Lakshya (Title Track)", "artist": "Shankar-Ehsaan-Loy", "lang": "hi", "moods": ["triumph", "steady"], "energy": 0.8, "era": "2004", "why_it_fits": "Guidance set, guidance hit. The mountain was climbed on plan."},
-    {"title": "Dangal (Title Track)", "artist": "Daler Mehndi", "lang": "hi", "moods": ["triumph"], "energy": 0.85, "era": "2016", "why_it_fits": "Beat the incumbents on their own turf."},
-    {"title": "Jai Ho", "artist": "A.R. Rahman (Slumdog Millionaire)", "lang": "hi", "moods": ["triumph"], "energy": 0.9, "era": "2008", "why_it_fits": "Destiny claimed after the long grind — a global-stage blowout."},
-    {"title": "Malhari", "artist": "Vishal Dadlani (Bajirao Mastani)", "lang": "hi", "moods": ["triumph"], "energy": 0.95, "era": "2015", "why_it_fits": "Unapologetic victory dance. The con-call after a 30% beat."},
-    {"title": "Apna Time Aayega", "artist": "Ranveer Singh & DIVINE (Gully Boy)", "lang": "hi", "moods": ["triumph", "turnaround_hope"], "energy": 0.85, "era": "2019", "why_it_fits": "The time finally came — and the numbers prove it."},
-    {"title": "Sultan (Title Track)", "artist": "Sukhwinder Singh & Shadab Faridi", "lang": "hi", "moods": ["triumph"], "energy": 0.85, "era": "2016", "why_it_fits": "The heavyweight returns to form and takes the belt back."},
-    {"title": "Dhoom Machale", "artist": "Sunidhi Chauhan (Dhoom)", "lang": "hi", "moods": ["triumph"], "energy": 0.9, "era": "2004", "why_it_fits": "Sheer momentum — every segment firing at once."},
-    {"title": "Eye of the Tiger", "artist": "Survivor", "lang": "en", "moods": ["triumph"], "energy": 0.9, "era": "1982", "why_it_fits": "Market-share fight won this quarter."},
-    {"title": "We Are the Champions", "artist": "Queen", "lang": "en", "moods": ["triumph"], "energy": 0.7, "era": "1977", "why_it_fits": "Victory lap quarter. Management earned the con-call swagger."},
-    {"title": "Don't Stop Me Now", "artist": "Queen", "lang": "en", "moods": ["triumph"], "energy": 0.95, "era": "1978", "why_it_fits": "Momentum quarter — every line item accelerating."},
-    {"title": "We Will Rock You", "artist": "Queen", "lang": "en", "moods": ["triumph"], "energy": 0.85, "era": "1977", "why_it_fits": "The stomp-stomp-clap of market share being taken."},
-    {"title": "Uptown Funk", "artist": "Mark Ronson ft. Bruno Mars", "lang": "en", "moods": ["triumph"], "energy": 0.95, "era": "2014", "why_it_fits": "Too hot. The quarter struts out of the exchange filing."},
-    {"title": "Thunderstruck", "artist": "AC/DC", "lang": "en", "moods": ["triumph"], "energy": 0.95, "era": "1990", "why_it_fits": "Operating leverage hits like a lightning bolt."},
-    {"title": "Hall of Fame", "artist": "The Script ft. will.i.am", "lang": "en", "moods": ["triumph"], "energy": 0.8, "era": "2012", "why_it_fits": "A quarter for the record books, dedicated to the doubters."},
-    {"title": "Celebration", "artist": "Kool & The Gang", "lang": "en", "moods": ["triumph"], "energy": 0.9, "era": "1980", "why_it_fits": "There's a party going on right here — in the cash flow statement."},
-
-    {"title": "Aashayein", "artist": "KK & Salim Merchant (Iqbal)", "lang": "hi", "moods": ["steady"], "energy": 0.6, "era": "2005", "why_it_fits": "Quiet confidence, compounding hope. The long game on track."},
-    {"title": "Yeh Honsla", "artist": "Shafqat Amanat Ali (Dor)", "lang": "hi", "moods": ["steady", "grind"], "energy": 0.5, "era": "2006", "why_it_fits": "Resolve without noise — margins held, book grew."},
-    {"title": "Ilahi", "artist": "Arijit Singh (YJHD)", "lang": "hi", "moods": ["steady"], "energy": 0.65, "era": "2013", "why_it_fits": "Pleasant journey, no surprises, compounding scenery."},
-    {"title": "Yun Hi Chala Chal", "artist": "Udit Narayan, Kailash Kher & Hariharan (Swades)", "lang": "hi", "moods": ["steady"], "energy": 0.55, "era": "2004", "why_it_fits": "Keep walking, traveller — the compounding road is the destination."},
-    {"title": "Musafir Hoon Yaaron", "artist": "Kishore Kumar (Parichay)", "lang": "hi", "moods": ["steady"], "energy": 0.5, "era": "1972", "why_it_fits": "No fixed address, only direction. A journey stock doing journey things."},
-    {"title": "Zindagi Ek Safar Hai Suhana", "artist": "Kishore Kumar (Andaz)", "lang": "hi", "moods": ["steady"], "energy": 0.6, "era": "1971", "why_it_fits": "Life's a pleasant journey — so is a 12% compounder."},
-    {"title": "Dil Dhadakne Do", "artist": "Shankar-Ehsaan-Loy (ZNMD)", "lang": "hi", "moods": ["steady"], "energy": 0.65, "era": "2011", "why_it_fits": "Let it breathe and grow. Nothing to fix here."},
-    {"title": "Safarnama", "artist": "Lucky Ali (Tamasha)", "lang": "hi", "moods": ["steady"], "energy": 0.45, "era": "2015", "why_it_fits": "The travelogue of a thesis on track."},
-    {"title": "Here Comes the Sun", "artist": "The Beatles", "lang": "en", "moods": ["steady", "turnaround_hope"], "energy": 0.5, "era": "1969", "why_it_fits": "It's all right. The numbers say so, gently."},
-    {"title": "Lovely Day", "artist": "Bill Withers", "lang": "en", "moods": ["steady"], "energy": 0.55, "era": "1977", "why_it_fits": "A no-drama beat-and-hold. Just a lovely quarter."},
-    {"title": "Three Little Birds", "artist": "Bob Marley", "lang": "en", "moods": ["steady"], "energy": 0.5, "era": "1977", "why_it_fits": "Every little thing gonna be all right — and the cash flow agrees."},
-    {"title": "What a Wonderful World", "artist": "Louis Armstrong", "lang": "en", "moods": ["steady"], "energy": 0.35, "era": "1967", "why_it_fits": "Green trees, red roses, clean working capital."},
-    {"title": "Don't Worry Be Happy", "artist": "Bobby McFerrin", "lang": "en", "moods": ["steady"], "energy": 0.5, "era": "1988", "why_it_fits": "Every line item is fine. Exhale."},
-    {"title": "Stand by Me", "artist": "Ben E. King", "lang": "en", "moods": ["steady"], "energy": 0.5, "era": "1961", "why_it_fits": "Hold through the noise — the franchise stands."},
-    {"title": "Easy", "artist": "Commodores", "lang": "en", "moods": ["steady"], "energy": 0.4, "era": "1977", "why_it_fits": "Easy like a Sunday-morning quarter. No drama anywhere."},
-
-    {"title": "Kar Har Maidaan Fateh", "artist": "Sukhwinder Singh & Shreya Ghoshal (Sanju)", "lang": "hi", "moods": ["grind"], "energy": 0.7, "era": "2018", "why_it_fits": "Fighting through a tough cycle, refusing to fold."},
-    {"title": "Ruk Jaana Nahin", "artist": "Kishore Kumar (Imtihaan)", "lang": "hi", "moods": ["grind"], "energy": 0.55, "era": "1974", "why_it_fits": "Flat quarter, head down, keep walking."},
-    {"title": "Chale Chalo", "artist": "A.R. Rahman (Lagaan)", "lang": "hi", "moods": ["grind"], "energy": 0.75, "era": "2001", "why_it_fits": "The match is long; this innings was survival, not glory."},
-    {"title": "Ziddi Dil", "artist": "Vishal Dadlani (Mary Kom)", "lang": "hi", "moods": ["grind"], "energy": 0.75, "era": "2014", "why_it_fits": "Stubborn heart in a punishing cycle. Refuses the standing count."},
-    {"title": "Sadda Haq", "artist": "Mohit Chauhan (Rockstar)", "lang": "hi", "moods": ["grind"], "energy": 0.8, "era": "2011", "why_it_fits": "Demanding its due from a market that won't give it."},
-    {"title": "Khoon Chala", "artist": "Mohit Chauhan (Rang De Basanti)", "lang": "hi", "moods": ["grind"], "energy": 0.6, "era": "2006", "why_it_fits": "Quiet resolve while the environment burns."},
-    {"title": "The Boxer", "artist": "Simon & Garfunkel", "lang": "en", "moods": ["grind"], "energy": 0.4, "era": "1969", "why_it_fits": "Cut and bruised but still standing. Sector headwinds absorbed."},
-    {"title": "Patience", "artist": "Guns N' Roses", "lang": "en", "moods": ["grind"], "energy": 0.45, "era": "1988", "why_it_fits": "Nothing happened this quarter. That was the plan. Sit tight."},
-    {"title": "Sixteen Tons", "artist": "Tennessee Ernie Ford", "lang": "en", "moods": ["grind"], "energy": 0.45, "era": "1955", "why_it_fits": "Another quarter older and deeper in debt. Working hard, owing the company store."},
-    {"title": "Working Class Hero", "artist": "John Lennon", "lang": "en", "moods": ["grind"], "energy": 0.4, "era": "1970", "why_it_fits": "Unglamorous toil. No re-rating for showing up — showing up anyway."},
-    {"title": "I Won't Back Down", "artist": "Tom Petty", "lang": "en", "moods": ["grind"], "energy": 0.6, "era": "1989", "why_it_fits": "Standing ground at the gates of a hostile cycle."},
-    {"title": "Under Pressure", "artist": "Queen & David Bowie", "lang": "en", "moods": ["grind", "distress"], "energy": 0.65, "era": "1981", "why_it_fits": "Margins under pressure, management under pressure, everybody under pressure."},
-    {"title": "Seven Nation Army", "artist": "The White Stripes", "lang": "en", "moods": ["grind"], "energy": 0.7, "era": "2003", "why_it_fits": "Marching bassline against an army of competitors."},
-    {"title": "Lose Yourself", "artist": "Eminem", "lang": "en", "moods": ["grind", "turnaround_hope"], "energy": 0.85, "era": "2002", "why_it_fits": "One shot at the turnaround capex. Do not miss."},
-
-    {"title": "Phir Se Ud Chala", "artist": "Mohit Chauhan (Rockstar)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.6, "era": "2011", "why_it_fits": "Off the ground again after the crash. Trough confirmed, wings unproven."},
-    {"title": "Aaj Phir Jeene Ki Tamanna Hai", "artist": "Lata Mangeshkar (Guide)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.65, "era": "1965", "why_it_fits": "The will to live returns to the P&L."},
-    {"title": "Roobaroo", "artist": "A.R. Rahman & Naresh Iyer (RDB)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.7, "era": "2006", "why_it_fits": "Light visible, face to face with the inflection at last."},
-    {"title": "Badal Pe Paon Hai", "artist": "Hema Sardesai (Chak De! India)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.7, "era": "2007", "why_it_fits": "Feet on the clouds after years in the dirt — heady, unproven."},
-    {"title": "Azaadiyan", "artist": "Amit Trivedi (Udaan)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.65, "era": "2010", "why_it_fits": "Freedom from the legacy mess, first flight on new wings."},
-    {"title": "Patakha Guddi", "artist": "Nooran Sisters (Highway)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.75, "era": "2014", "why_it_fits": "Untethered kite climbing — the wind finally favourable."},
-    {"title": "Manja", "artist": "Amit Trivedi (Kai Po Che)", "lang": "hi", "moods": ["turnaround_hope"], "energy": 0.6, "era": "2013", "why_it_fits": "Rebuilding the string, eyeing the sky again."},
-    {"title": "Fix You", "artist": "Coldplay", "lang": "en", "moods": ["turnaround_hope", "distress"], "energy": 0.5, "era": "2005", "why_it_fits": "Lights will guide you home — the restructuring is working."},
-    {"title": "I Can See Clearly Now", "artist": "Johnny Nash", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.55, "era": "1972", "why_it_fits": "Rain gone, obstacles in plain sight. J-curve exiting the trough."},
-    {"title": "Dog Days Are Over", "artist": "Florence + The Machine", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.8, "era": "2008", "why_it_fits": "The bad cycle ended — run from it no more."},
-    {"title": "Don't Stop Believin'", "artist": "Journey", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.75, "era": "1981", "why_it_fits": "Hold the thesis — the midnight train is moving."},
-    {"title": "Beautiful Day", "artist": "U2", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.7, "era": "2000", "why_it_fits": "After the rain, a sky you could re-rate."},
-    {"title": "Wake Me Up", "artist": "Avicii", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.7, "era": "2013", "why_it_fits": "Finding its way out of the wilderness years."},
-    {"title": "Rise Up", "artist": "Andra Day", "lang": "en", "moods": ["turnaround_hope"], "energy": 0.5, "era": "2015", "why_it_fits": "Rising slowly, in spite of the ache in the balance sheet."},
-
-    {"title": "Waqt Ne Kiya Kya Haseen Sitam", "artist": "Geeta Dutt (Kaagaz Ke Phool)", "lang": "hi", "moods": ["distress"], "energy": 0.25, "era": "1959", "why_it_fits": "Time did this beautifully and cruelly. Structural decline in elegy form."},
-    {"title": "Tujhse Naraz Nahi Zindagi", "artist": "Anup Ghoshal (Masoom)", "lang": "hi", "moods": ["distress"], "energy": 0.3, "era": "1983", "why_it_fits": "Not angry, just bewildered — like shareholders reading the segment results."},
-    {"title": "Tanhayee", "artist": "Sonu Nigam (Dil Chahta Hai)", "lang": "hi", "moods": ["distress"], "energy": 0.35, "era": "2001", "why_it_fits": "The loneliness of a stock the institutions have left."},
-    {"title": "Luka Chuppi", "artist": "Lata Mangeshkar & A.R. Rahman (RDB)", "lang": "hi", "moods": ["distress"], "energy": 0.2, "era": "2006", "why_it_fits": "A requiem for the earnings estimates that never came home."},
-    {"title": "Agar Tum Saath Ho", "artist": "Alka Yagnik & Arijit Singh (Tamasha)", "lang": "hi", "moods": ["distress"], "energy": 0.3, "era": "2015", "why_it_fits": "Pleading with a stock that keeps hurting you."},
-    {"title": "Jaane Woh Kaise Log The", "artist": "Hemant Kumar (Pyaasa)", "lang": "hi", "moods": ["distress"], "energy": 0.25, "era": "1957", "why_it_fits": "Who were these people who got growth? We got impairments."},
-    {"title": "Mera Jeevan Kora Kagaz", "artist": "Kishore Kumar (Kora Kagaz)", "lang": "hi", "moods": ["distress"], "energy": 0.3, "era": "1974", "why_it_fits": "The book, blank where the earnings should have been."},
-    {"title": "Hurt", "artist": "Johnny Cash", "lang": "en", "moods": ["distress"], "energy": 0.25, "era": "2002", "why_it_fits": "The empire of dirt on the balance sheet, surveyed honestly."},
-    {"title": "Everybody Hurts", "artist": "R.E.M.", "lang": "en", "moods": ["distress"], "energy": 0.3, "era": "1992", "why_it_fits": "Hold on — sector-wide pain, no one spared."},
-    {"title": "The Sound of Silence", "artist": "Simon & Garfunkel", "lang": "en", "moods": ["distress"], "energy": 0.3, "era": "1964", "why_it_fits": "Management took no questions on the call."},
-    {"title": "Yesterday", "artist": "The Beatles", "lang": "en", "moods": ["distress"], "energy": 0.3, "era": "1965", "why_it_fits": "All the moats seemed so permanent yesterday."},
-    {"title": "House of the Rising Sun", "artist": "The Animals", "lang": "en", "moods": ["distress"], "energy": 0.4, "era": "1964", "why_it_fits": "Ruin built on borrowed money. Tell the children not to do what I have done."},
-    {"title": "Nothing Compares 2 U", "artist": "Sinéad O'Connor", "lang": "en", "moods": ["distress"], "energy": 0.3, "era": "1990", "why_it_fits": "Nothing compares to the margins of three years ago."},
-    {"title": "Losing My Religion", "artist": "R.E.M.", "lang": "en", "moods": ["distress"], "energy": 0.45, "era": "1991", "why_it_fits": "The institutions are losing faith, holder by holder."},
-    {"title": "Comfortably Numb", "artist": "Pink Floyd", "lang": "en", "moods": ["distress"], "energy": 0.3, "era": "1979", "why_it_fits": "The pain faded into numbness around the third profit warning."},
-
-    {"title": "Jhooth Bole Kauwa Kaate", "artist": "Lata & Shailendra Singh (Bobby)", "lang": "hi", "moods": ["illusion"], "energy": 0.7, "era": "1973", "why_it_fits": "Lie and the crow bites. The headline beat that the cash flow contradicts."},
-    {"title": "Paisa Yeh Paisa", "artist": "Kishore Kumar (Karz)", "lang": "hi", "moods": ["illusion"], "energy": 0.75, "era": "1980", "why_it_fits": "Money everywhere in the gross numbers, nowhere in the net."},
-    {"title": "Dil To Bachcha Hai Ji", "artist": "Rahat Fateh Ali Khan (Ishqiya)", "lang": "hi", "moods": ["illusion"], "energy": 0.5, "era": "2010", "why_it_fits": "The heart is a child — it believes the investor presentation."},
-    {"title": "Sapne Mein Milti Hai", "artist": "Suresh Wadkar & Asha Bhosle (Satya)", "lang": "hi", "moods": ["illusion"], "energy": 0.6, "era": "1998", "why_it_fits": "The profitability exists — but only in the projections."},
-    {"title": "Yeh Duniya Agar Mil Bhi Jaaye", "artist": "Mohammed Rafi (Pyaasa)", "lang": "hi", "moods": ["illusion", "distress"], "energy": 0.4, "era": "1957", "why_it_fits": "Win the whole optical world — so what? The cash never came."},
-    {"title": "Money for Nothing", "artist": "Dire Straits", "lang": "en", "moods": ["illusion"], "energy": 0.7, "era": "1985", "why_it_fits": "Revenue for nothing and the take-rate ain't free."},
-    {"title": "The Great Pretender", "artist": "The Platters", "lang": "en", "moods": ["illusion"], "energy": 0.45, "era": "1955", "why_it_fits": "Adjusted-EBITDA in three-part harmony."},
-    {"title": "Smooth Criminal", "artist": "Michael Jackson", "lang": "en", "moods": ["illusion"], "energy": 0.8, "era": "1987", "why_it_fits": "The one-offs hit so smoothly you almost didn't notice. Annie, are the auditors OK?"},
-    {"title": "Sweet Dreams (Are Made of This)", "artist": "Eurythmics", "lang": "en", "moods": ["illusion"], "energy": 0.7, "era": "1983", "why_it_fits": "Everybody's looking for something — mostly the missing OCF."},
-    {"title": "Fake Plastic Trees", "artist": "Radiohead", "lang": "en", "moods": ["illusion"], "energy": 0.3, "era": "1995", "why_it_fits": "It looks like real growth. It wears like real growth. It isn't."},
-    {"title": "Smooth Operator", "artist": "Sade", "lang": "en", "moods": ["illusion"], "energy": 0.55, "era": "1984", "why_it_fits": "The promoter's diagonal from gross GMV to adjusted contribution profit."},
-    {"title": "Hotel California", "artist": "Eagles", "lang": "en", "moods": ["illusion"], "energy": 0.55, "era": "1976", "why_it_fits": "You can book the revenue any time you like, but the cash never leaves."},
-    {"title": "The Grand Illusion", "artist": "Styx", "lang": "en", "moods": ["illusion"], "energy": 0.65, "era": "1977", "why_it_fits": "The title says it. Deep inside we're all the same take-rate."},
-
-    {"title": "Yeh Kya Hua", "artist": "Kishore Kumar (Amar Prem)", "lang": "hi", "moods": ["shock"], "energy": 0.4, "era": "1972", "why_it_fits": "What happened, how, when, why — the guidance-cut con call in one mukhda."},
-    {"title": "Kasme Vaade Pyaar Wafa", "artist": "Manna Dey (Upkar)", "lang": "hi", "moods": ["shock"], "energy": 0.35, "era": "1967", "why_it_fits": "Promises and guidance — all things that console; what of them came true?"},
-    {"title": "Chingari Koi Bhadke", "artist": "Kishore Kumar (Amar Prem)", "lang": "hi", "moods": ["shock"], "energy": 0.35, "era": "1972", "why_it_fits": "When the protector starts the fire — promoter pledges, anyone?"},
-    {"title": "Aaj Mausam Bada Beimaan Hai", "artist": "Mohammed Rafi (Loafer)", "lang": "hi", "moods": ["shock"], "energy": 0.5, "era": "1973", "why_it_fits": "The weather turned treacherous mid-quarter."},
-    {"title": "Kya Se Kya Ho Gaya", "artist": "Mohammed Rafi (Guide)", "lang": "hi", "moods": ["shock"], "energy": 0.4, "era": "1965", "why_it_fits": "What it was, what it became — between two con-calls."},
-    {"title": "Zindagi Kaisi Hai Paheli", "artist": "Manna Dey (Anand)", "lang": "hi", "moods": ["shock"], "energy": 0.45, "era": "1971", "why_it_fits": "Life's riddle: guidance raised in October, withdrawn in January."},
-    {"title": "Mad World", "artist": "Gary Jules", "lang": "en", "moods": ["shock"], "energy": 0.25, "era": "2001", "why_it_fits": "Staring at the results screen, expressionless."},
-    {"title": "Boulevard of Broken Dreams", "artist": "Green Day", "lang": "en", "moods": ["shock", "distress"], "energy": 0.5, "era": "2004", "why_it_fits": "Walking alone after the 18% gap-down."},
-    {"title": "Zombie", "artist": "The Cranberries", "lang": "en", "moods": ["shock"], "energy": 0.7, "era": "1994", "why_it_fits": "The write-off that keeps clawing back, in your head."},
-    {"title": "It's the End of the World as We Know It", "artist": "R.E.M.", "lang": "en", "moods": ["shock"], "energy": 0.8, "era": "1987", "why_it_fits": "Guidance pulled — and the promoter feels fine."},
-    {"title": "Free Fallin'", "artist": "Tom Petty", "lang": "en", "moods": ["shock"], "energy": 0.55, "era": "1989", "why_it_fits": "The chart after the exchange filing."},
-    {"title": "Landslide", "artist": "Fleetwood Mac", "lang": "en", "moods": ["shock"], "energy": 0.35, "era": "1975", "why_it_fits": "Watched the estimates come down — well, the landslide brought them down."},
-    {"title": "Bohemian Rhapsody", "artist": "Queen", "lang": "en", "moods": ["shock", "illusion"], "energy": 0.6, "era": "1975", "why_it_fits": "Is this the real life? Is this just adjusted EBITDA?"}
-  ]
+ "comment": "The AmhiSangeet songbank. moods: triumph|steady|grind|turnaround_hope|distress|illusion|shock. energy 0-1 matches verdict intensity. Curate freely — this file IS the product.",
+ "songs": [
+  {
+   "title": "Chak De! India",
+   "artist": "Sukhwinder Singh",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.95,
+   "era": "2007",
+   "why_it_fits": "The underdog delivered. Full team blowout quarter.",
+   "yt": "bnqLzCsffwY",
+   "yt_title": "Chak De India Song | Title Song | Shah Rukh Khan | Sukhwinder Singh | Salim-Sulaiman | Jaideep Sahni"
+  },
+  {
+   "title": "Zinda",
+   "artist": "Siddharth Mahadevan (Bhaag Milkha Bhaag)",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.9,
+   "era": "2013",
+   "why_it_fits": "Earned the hard way — operating leverage finally kicking in.",
+   "yt": "Ax0G_P2dSBw",
+   "yt_title": "Zinda Lyric Video - Bhaag Milkha Bhaag|Farhan Akhtar|Siddharth Mahadevan|Prasoon Joshi"
+  },
+  {
+   "title": "Lakshya (Title Track)",
+   "artist": "Shankar-Ehsaan-Loy",
+   "lang": "hi",
+   "moods": [
+    "triumph",
+    "steady"
+   ],
+   "energy": 0.8,
+   "era": "2004",
+   "why_it_fits": "Guidance set, guidance hit. The mountain was climbed on plan.",
+   "yt": "8DMF0U6xV78",
+   "yt_title": "Lakshya Full Video - Title Track | Hrithik Roshan | Shankar Ehsaan Loy | Javed Akhtar"
+  },
+  {
+   "title": "Dangal (Title Track)",
+   "artist": "Daler Mehndi",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.85,
+   "era": "2016",
+   "why_it_fits": "Beat the incumbents on their own turf.",
+   "yt": "91ZI3IrojMU",
+   "yt_title": "Dangal - Title Track | Dangal | Aamir Khan | Pritam | Amitabh Bhattacharya| Daler Mehndi | HD Video"
+  },
+  {
+   "title": "Jai Ho",
+   "artist": "A.R. Rahman (Slumdog Millionaire)",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.9,
+   "era": "2008",
+   "why_it_fits": "Destiny claimed after the long grind — a global-stage blowout.",
+   "yt": "xwwAVRyNmgQ",
+   "yt_title": "Jai Ho Slumdog Millionaire (Full Song)"
+  },
+  {
+   "title": "Malhari",
+   "artist": "Vishal Dadlani (Bajirao Mastani)",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.95,
+   "era": "2015",
+   "why_it_fits": "Unapologetic victory dance. The con-call after a 30% beat.",
+   "yt": "l_MyUGq7pgs",
+   "yt_title": "Malhari - Full Video Song | Bajirao Mastani | Ranveer Singh | Vishal Dadlani | Sanjay Leela Bhansali"
+  },
+  {
+   "title": "Apna Time Aayega",
+   "artist": "Ranveer Singh & DIVINE (Gully Boy)",
+   "lang": "hi",
+   "moods": [
+    "triumph",
+    "turnaround_hope"
+   ],
+   "energy": 0.85,
+   "era": "2019",
+   "why_it_fits": "The time finally came — and the numbers prove it.",
+   "yt": "jFGKJBPFdUA",
+   "yt_title": "Apna Time Aayega | Gully Boy | Ranveer Singh & Alia Bhatt | DIVINE | Dub Sharma | Zoya Akhtar"
+  },
+  {
+   "title": "Sultan (Title Track)",
+   "artist": "Sukhwinder Singh & Shadab Faridi",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.85,
+   "era": "2016",
+   "why_it_fits": "The heavyweight returns to form and takes the belt back.",
+   "yt": "abiL84EAWSY",
+   "yt_title": "Sultan Title Song | Salman Khan, Anushka Sharma | Sukhwinder Singh, Shadab Faridi, Vishal & Shekhar"
+  },
+  {
+   "title": "Dhoom Machale",
+   "artist": "Sunidhi Chauhan (Dhoom)",
+   "lang": "hi",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.9,
+   "era": "2004",
+   "why_it_fits": "Sheer momentum — every segment firing at once.",
+   "yt": "2uUmHTgT65I",
+   "yt_title": "Dhoom Machale Song | DHOOM, Esha Deol, John Abraham, Abhishek, Uday, Sunidhi Chauhan, Pritam, Sameer"
+  },
+  {
+   "title": "Eye of the Tiger",
+   "artist": "Survivor",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.9,
+   "era": "1982",
+   "why_it_fits": "Market-share fight won this quarter.",
+   "yt": "btPJPFnesV4",
+   "yt_title": "Survivor - Eye Of The Tiger (Official HD Video)"
+  },
+  {
+   "title": "We Are the Champions",
+   "artist": "Queen",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.7,
+   "era": "1977",
+   "why_it_fits": "Victory lap quarter. Management earned the con-call swagger.",
+   "yt": "04854XqcfCY",
+   "yt_title": "Queen - We Are The Champions (Official Video)"
+  },
+  {
+   "title": "Don't Stop Me Now",
+   "artist": "Queen",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.95,
+   "era": "1978",
+   "why_it_fits": "Momentum quarter — every line item accelerating.",
+   "yt": "HgzGwKwLmgM",
+   "yt_title": "Queen - Don't Stop Me Now (Official Video)"
+  },
+  {
+   "title": "We Will Rock You",
+   "artist": "Queen",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.85,
+   "era": "1977",
+   "why_it_fits": "The stomp-stomp-clap of market share being taken.",
+   "yt": "-tJYN-eG1zk",
+   "yt_title": "Queen - We Will Rock You (Official Video)"
+  },
+  {
+   "title": "Uptown Funk",
+   "artist": "Mark Ronson ft. Bruno Mars",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.95,
+   "era": "2014",
+   "why_it_fits": "Too hot. The quarter struts out of the exchange filing.",
+   "yt": "OPf0YbXqDm0",
+   "yt_title": "Mark Ronson - Uptown Funk (Official Video) ft. Bruno Mars"
+  },
+  {
+   "title": "Thunderstruck",
+   "artist": "AC/DC",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.95,
+   "era": "1990",
+   "why_it_fits": "Operating leverage hits like a lightning bolt.",
+   "yt": "LB81sqKQ2pk",
+   "yt_title": "ACDC Thunderstruck - Live Buenos Aires 2009"
+  },
+  {
+   "title": "Hall of Fame",
+   "artist": "The Script ft. will.i.am",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.8,
+   "era": "2012",
+   "why_it_fits": "A quarter for the record books, dedicated to the doubters.",
+   "yt": "mk48xRzuNvA",
+   "yt_title": "The Script - Hall of Fame (Official Video) ft. will.i.am"
+  },
+  {
+   "title": "Celebration",
+   "artist": "Kool & The Gang",
+   "lang": "en",
+   "moods": [
+    "triumph"
+   ],
+   "energy": 0.9,
+   "era": "1980",
+   "why_it_fits": "There's a party going on right here — in the cash flow statement.",
+   "yt": "3GwjfUFyY6M",
+   "yt_title": "Kool & The Gang - Celebration"
+  },
+  {
+   "title": "Aashayein",
+   "artist": "KK & Salim Merchant (Iqbal)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.6,
+   "era": "2005",
+   "why_it_fits": "Quiet confidence, compounding hope. The long game on track.",
+   "yt": "CaI0xNLpurM",
+   "yt_title": "Aashayein - Iqbal | Naseeruddin Shah, Shreyas Talpade | KK & Salim Merchant | Hindi Hit Songs"
+  },
+  {
+   "title": "Yeh Honsla",
+   "artist": "Shafqat Amanat Ali (Dor)",
+   "lang": "hi",
+   "moods": [
+    "steady",
+    "grind"
+   ],
+   "energy": 0.5,
+   "era": "2006",
+   "why_it_fits": "Resolve without noise — margins held, book grew.",
+   "yt": "3TndEMf6zws",
+   "yt_title": "Ye Honsla"
+  },
+  {
+   "title": "Ilahi",
+   "artist": "Arijit Singh (YJHD)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.65,
+   "era": "2013",
+   "why_it_fits": "Pleasant journey, no surprises, compounding scenery.",
+   "yt": "fdubeMFwuGs",
+   "yt_title": "Ilahi Full Video Song | Yeh Jawaani Hai Deewani | Ranbir Kapoor, Deepika Padukone | Pritam"
+  },
+  {
+   "title": "Yun Hi Chala Chal",
+   "artist": "Udit Narayan, Kailash Kher & Hariharan (Swades)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.55,
+   "era": "2004",
+   "why_it_fits": "Keep walking, traveller — the compounding road is the destination.",
+   "yt": "eEeX2QMlSlo",
+   "yt_title": "Yun Hi Chala Chal Lyrical Video | Swades | A.R. Rahman | Javed Akhtar | Udit Narayan | Shahrukh Khan"
+  },
+  {
+   "title": "Musafir Hoon Yaaron",
+   "artist": "Kishore Kumar (Parichay)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.5,
+   "era": "1972",
+   "why_it_fits": "No fixed address, only direction. A journey stock doing journey things.",
+   "yt": "WcsncpEWQZI",
+   "yt_title": "Musafir Hoon Yaron | Kishore Kumar | R D Burman | Parichay | Lyrical Video | Old Hindi Song"
+  },
+  {
+   "title": "Zindagi Ek Safar Hai Suhana",
+   "artist": "Kishore Kumar (Andaz)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.6,
+   "era": "1971",
+   "why_it_fits": "Life's a pleasant journey — so is a 12% compounder.",
+   "yt": "LlvoY4v5zm0",
+   "yt_title": "Zindagi Ek Safar Hai Suhana | Andaz (1971) | Rajesh Khanna, Hema | Kishore Kumar | Romantic Songs"
+  },
+  {
+   "title": "Dil Dhadakne Do",
+   "artist": "Shankar-Ehsaan-Loy (ZNMD)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.65,
+   "era": "2011",
+   "why_it_fits": "Let it breathe and grow. Nothing to fix here.",
+   "yt": "WuMWwPHTSoY",
+   "yt_title": "Dil Dhadakne Do Full Video Song | Zindagi Na Milegi Dobara | Hrithik Roshan, Farhan Akhtar"
+  },
+  {
+   "title": "Safarnama",
+   "artist": "Lucky Ali (Tamasha)",
+   "lang": "hi",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.45,
+   "era": "2015",
+   "why_it_fits": "The travelogue of a thesis on track.",
+   "yt": "sOhESxhibAM",
+   "yt_title": "Safarnama FULL AUDIO Song | Tamasha | Ranbir Kapoor, Deepika Padukone | T-Series"
+  },
+  {
+   "title": "Here Comes the Sun",
+   "artist": "The Beatles",
+   "lang": "en",
+   "moods": [
+    "steady",
+    "turnaround_hope"
+   ],
+   "energy": 0.5,
+   "era": "1969",
+   "why_it_fits": "It's all right. The numbers say so, gently.",
+   "yt": "KQetemT1sWc",
+   "yt_title": "The Beatles - The Beatles - Here Comes The Sun (Official Music Video) [2019 Mix]"
+  },
+  {
+   "title": "Lovely Day",
+   "artist": "Bill Withers",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.55,
+   "era": "1977",
+   "why_it_fits": "A no-drama beat-and-hold. Just a lovely quarter.",
+   "yt": "bEeaS6fuUoA",
+   "yt_title": "Bill Withers - Lovely Day (Official Audio)"
+  },
+  {
+   "title": "Three Little Birds",
+   "artist": "Bob Marley",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.5,
+   "era": "1977",
+   "why_it_fits": "Every little thing gonna be all right — and the cash flow agrees.",
+   "yt": "HNBCVM4KbUM",
+   "yt_title": "Bob Marley & The Wailers - Three Little Birds (Official Music Video)"
+  },
+  {
+   "title": "What a Wonderful World",
+   "artist": "Louis Armstrong",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.35,
+   "era": "1967",
+   "why_it_fits": "Green trees, red roses, clean working capital.",
+   "yt": "rBrd_3VMC3c",
+   "yt_title": "Louis Armstrong - What A Wonderful World (Official Video)"
+  },
+  {
+   "title": "Don't Worry Be Happy",
+   "artist": "Bobby McFerrin",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.5,
+   "era": "1988",
+   "why_it_fits": "Every line item is fine. Exhale.",
+   "yt": "d-diB65scQU",
+   "yt_title": "Bobby McFerrin - Don't Worry Be Happy (Official Music Video)"
+  },
+  {
+   "title": "Stand by Me",
+   "artist": "Ben E. King",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.5,
+   "era": "1961",
+   "why_it_fits": "Hold through the noise — the franchise stands.",
+   "yt": "hwZNL7QVJjE",
+   "yt_title": "Ben E. King - Stand By Me (Audio)"
+  },
+  {
+   "title": "Easy",
+   "artist": "Commodores",
+   "lang": "en",
+   "moods": [
+    "steady"
+   ],
+   "energy": 0.4,
+   "era": "1977",
+   "why_it_fits": "Easy like a Sunday-morning quarter. No drama anywhere.",
+   "yt": "9nBSd1U18vM",
+   "yt_title": "Commodores - Easy (Audio)"
+  },
+  {
+   "title": "Kar Har Maidaan Fateh",
+   "artist": "Sukhwinder Singh & Shreya Ghoshal (Sanju)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.7,
+   "era": "2018",
+   "why_it_fits": "Fighting through a tough cycle, refusing to fold.",
+   "yt": "RCgbE6eS-DU",
+   "yt_title": "Kar Har Maidaan Fateh Lyrical | Sanju | Ranbir Kapoor | Rajkumar Hirani | Sukhwinder Singh | Shreya"
+  },
+  {
+   "title": "Ruk Jaana Nahin",
+   "artist": "Kishore Kumar (Imtihaan)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.55,
+   "era": "1974",
+   "why_it_fits": "Flat quarter, head down, keep walking.",
+   "yt": "9XhkhCMHU7I",
+   "yt_title": "Ruk Jana Nahin - (Lyrics) | Kishore Kumar | Imtihan | Vinod Khanna | Old Hindi Sad Song"
+  },
+  {
+   "title": "Chale Chalo",
+   "artist": "A.R. Rahman (Lagaan)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.75,
+   "era": "2001",
+   "why_it_fits": "The match is long; this innings was survival, not glory.",
+   "yt": "LQmHKl3oNu0",
+   "yt_title": "A.R. Rahman - Chale Chalo Best Video|Lagaan|Aamir Khan|Srinivas|Ashutosh Gowariker"
+  },
+  {
+   "title": "Ziddi Dil",
+   "artist": "Vishal Dadlani (Mary Kom)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.75,
+   "era": "2014",
+   "why_it_fits": "Stubborn heart in a punishing cycle. Refuses the standing count.",
+   "yt": "puKD3nkB1h4",
+   "yt_title": "Ziddi Dil Full Video | MARY KOM | Feat Priyanka Chopra | Vishal Dadlani | HD"
+  },
+  {
+   "title": "Sadda Haq",
+   "artist": "Mohit Chauhan (Rockstar)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.8,
+   "era": "2011",
+   "why_it_fits": "Demanding its due from a market that won't give it.",
+   "yt": "p9DQINKZxWE",
+   "yt_title": "ROCKSTAR: Sadda Haq (Full Video) Song | Ranbir Kapoor | A.R. Rahman | Mohit Chauhan | Irshaad Kamil"
+  },
+  {
+   "title": "Khoon Chala",
+   "artist": "Mohit Chauhan (Rang De Basanti)",
+   "lang": "hi",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.6,
+   "era": "2006",
+   "why_it_fits": "Quiet resolve while the environment burns.",
+   "yt": "fbbHNMXp5dU",
+   "yt_title": "A.R. Rahman - Khoon Chala Best Video|Rang De Basanti|Aamir Khan|Siddharth|Mohit Chauhan"
+  },
+  {
+   "title": "The Boxer",
+   "artist": "Simon & Garfunkel",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.4,
+   "era": "1969",
+   "why_it_fits": "Cut and bruised but still standing. Sector headwinds absorbed.",
+   "yt": "l3LFML_pxlY",
+   "yt_title": "Simon & Garfunkel - The Boxer (Audio)"
+  },
+  {
+   "title": "Patience",
+   "artist": "Guns N' Roses",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.45,
+   "era": "1988",
+   "why_it_fits": "Nothing happened this quarter. That was the plan. Sit tight.",
+   "yt": "ErvgV4P6Fzc",
+   "yt_title": "Guns N' Roses - Patience"
+  },
+  {
+   "title": "Sixteen Tons",
+   "artist": "Tennessee Ernie Ford",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.45,
+   "era": "1955",
+   "why_it_fits": "Another quarter older and deeper in debt. Working hard, owing the company store.",
+   "yt": "S1980WfKC0o",
+   "yt_title": "Sixteen Tons | Tennessee Ernie Ford | Oct 18, 1956"
+  },
+  {
+   "title": "Working Class Hero",
+   "artist": "John Lennon",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.4,
+   "era": "1970",
+   "why_it_fits": "Unglamorous toil. No re-rating for showing up — showing up anyway.",
+   "yt": "Ve-mANenpC4",
+   "yt_title": "John lennon - working class hero (official video)"
+  },
+  {
+   "title": "I Won't Back Down",
+   "artist": "Tom Petty",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.6,
+   "era": "1989",
+   "why_it_fits": "Standing ground at the gates of a hostile cycle.",
+   "yt": "nvlTJrNJ5lA",
+   "yt_title": "Tom Petty And The Heartbreakers - I Won't Back Down (Official Music Video)"
+  },
+  {
+   "title": "Under Pressure",
+   "artist": "Queen & David Bowie",
+   "lang": "en",
+   "moods": [
+    "grind",
+    "distress"
+   ],
+   "energy": 0.65,
+   "era": "1981",
+   "why_it_fits": "Margins under pressure, management under pressure, everybody under pressure.",
+   "yt": "a01QQZyl-_I",
+   "yt_title": "Queen and David Bowie - Under Pressure (Official Video)"
+  },
+  {
+   "title": "Seven Nation Army",
+   "artist": "The White Stripes",
+   "lang": "en",
+   "moods": [
+    "grind"
+   ],
+   "energy": 0.7,
+   "era": "2003",
+   "why_it_fits": "Marching bassline against an army of competitors.",
+   "yt": "0J2QdDbelmY",
+   "yt_title": "The White Stripes - Seven Nation Army (Official Music Video)"
+  },
+  {
+   "title": "Lose Yourself",
+   "artist": "Eminem",
+   "lang": "en",
+   "moods": [
+    "grind",
+    "turnaround_hope"
+   ],
+   "energy": 0.85,
+   "era": "2002",
+   "why_it_fits": "One shot at the turnaround capex. Do not miss.",
+   "yt": "xFYQQPAOz7Y",
+   "yt_title": "Eminem - Lose Yourself"
+  },
+  {
+   "title": "Phir Se Ud Chala",
+   "artist": "Mohit Chauhan (Rockstar)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.6,
+   "era": "2011",
+   "why_it_fits": "Off the ground again after the crash. Trough confirmed, wings unproven.",
+   "yt": "2mWaqsC3U7k",
+   "yt_title": "ROCKSTAR: Phir Se Ud Chala (Full Song) | Ranbir Kapoor, Nargis Fakhri | A. R. Rahman, Mohit Chauhan"
+  },
+  {
+   "title": "Aaj Phir Jeene Ki Tamanna Hai",
+   "artist": "Lata Mangeshkar (Guide)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.65,
+   "era": "1965",
+   "why_it_fits": "The will to live returns to the P&L.",
+   "yt": "Eylt4Rbq-RA",
+   "yt_title": "Aaj Phir Jeene Ki Tamanna Hai-Full Video Song-Guide 1965-Dev Anand-Waheeda Rehman"
+  },
+  {
+   "title": "Roobaroo",
+   "artist": "A.R. Rahman & Naresh Iyer (RDB)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.7,
+   "era": "2006",
+   "why_it_fits": "Light visible, face to face with the inflection at last.",
+   "yt": "kCbkj-LLBwU",
+   "yt_title": "Rang De Basanti"
+  },
+  {
+   "title": "Badal Pe Paon Hai",
+   "artist": "Hema Sardesai (Chak De! India)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.7,
+   "era": "2007",
+   "why_it_fits": "Feet on the clouds after years in the dirt — heady, unproven.",
+   "yt": "DmsOinqrPvQ",
+   "yt_title": "Badal Pe Paon Hain Song | Chak De India | Shah Rukh Khan | Hema Sardesai | Salim-Sulaiman, Jaideep S"
+  },
+  {
+   "title": "Azaadiyan",
+   "artist": "Amit Trivedi (Udaan)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.65,
+   "era": "2010",
+   "why_it_fits": "Freedom from the legacy mess, first flight on new wings.",
+   "yt": "NJc9H90Q7B0",
+   "yt_title": "Aazaadiyan - Udaan (2010) - Awesome Song - Must Watch - HQ"
+  },
+  {
+   "title": "Patakha Guddi",
+   "artist": "Nooran Sisters (Highway)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.75,
+   "era": "2014",
+   "why_it_fits": "Untethered kite climbing — the wind finally favourable.",
+   "yt": "8HDTS80dlr4",
+   "yt_title": "Patakha Guddi Highway Full Video Song (Official) || A.R Rahman | Alia Bhatt, Randeep Hooda"
+  },
+  {
+   "title": "Manja",
+   "artist": "Amit Trivedi (Kai Po Che)",
+   "lang": "hi",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.6,
+   "era": "2013",
+   "why_it_fits": "Rebuilding the string, eyeing the sky again.",
+   "yt": "YKcmMmJlKNk",
+   "yt_title": "Manja - Full Video | Kai Po Che | Sushant Singh Rajput, Rajkummar Rao, Amit Sadh | Amit Trivedi"
+  },
+  {
+   "title": "Fix You",
+   "artist": "Coldplay",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope",
+    "distress"
+   ],
+   "energy": 0.5,
+   "era": "2005",
+   "why_it_fits": "Lights will guide you home — the restructuring is working.",
+   "yt": "k4V3Mo61fJM",
+   "yt_title": "Coldplay - Fix You (Official Video)"
+  },
+  {
+   "title": "I Can See Clearly Now",
+   "artist": "Johnny Nash",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.55,
+   "era": "1972",
+   "why_it_fits": "Rain gone, obstacles in plain sight. J-curve exiting the trough.",
+   "yt": "b0cAWgTPiwM",
+   "yt_title": "Johnny Nash - I Can See Clearly Now (Official Audio)"
+  },
+  {
+   "title": "Dog Days Are Over",
+   "artist": "Florence + The Machine",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.8,
+   "era": "2008",
+   "why_it_fits": "The bad cycle ended — run from it no more.",
+   "yt": "iWOyfLBYtuU",
+   "yt_title": "Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video)"
+  },
+  {
+   "title": "Don't Stop Believin'",
+   "artist": "Journey",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.75,
+   "era": "1981",
+   "why_it_fits": "Hold the thesis — the midnight train is moving.",
+   "yt": "1k8craCGpgs",
+   "yt_title": "Journey - Don't Stop Believin' (Official Audio)"
+  },
+  {
+   "title": "Beautiful Day",
+   "artist": "U2",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.7,
+   "era": "2000",
+   "why_it_fits": "After the rain, a sky you could re-rate.",
+   "yt": "co6WMzDOh1o",
+   "yt_title": "U2 - Beautiful Day (Official Music Video)"
+  },
+  {
+   "title": "Wake Me Up",
+   "artist": "Avicii",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.7,
+   "era": "2013",
+   "why_it_fits": "Finding its way out of the wilderness years.",
+   "yt": "IcrbM1l_BoI",
+   "yt_title": "Avicii - Wake Me Up (Official Video)"
+  },
+  {
+   "title": "Rise Up",
+   "artist": "Andra Day",
+   "lang": "en",
+   "moods": [
+    "turnaround_hope"
+   ],
+   "energy": 0.5,
+   "era": "2015",
+   "why_it_fits": "Rising slowly, in spite of the ache in the balance sheet.",
+   "yt": "lwgr_IMeEgA",
+   "yt_title": "Andra Day - Rise Up [Official Music Video] [Inspiration Version]"
+  },
+  {
+   "title": "Waqt Ne Kiya Kya Haseen Sitam",
+   "artist": "Geeta Dutt (Kaagaz Ke Phool)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.25,
+   "era": "1959",
+   "why_it_fits": "Time did this beautifully and cruelly. Structural decline in elegy form.",
+   "yt": "69vc3ov_gOU",
+   "yt_title": "Waqt Ne Kiya Kya Haseen Sitam with lyrics | Geeta Dutt | Kaagaz Ke Phool"
+  },
+  {
+   "title": "Tujhse Naraz Nahi Zindagi",
+   "artist": "Anup Ghoshal (Masoom)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1983",
+   "why_it_fits": "Not angry, just bewildered — like shareholders reading the segment results.",
+   "yt": "GQLnC6ds44k",
+   "yt_title": "Tujhse Naraz Nahi Zindagi (Make) – Full song | Anup Ghosal | Masoom [1983]"
+  },
+  {
+   "title": "Tanhayee",
+   "artist": "Sonu Nigam (Dil Chahta Hai)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.35,
+   "era": "2001",
+   "why_it_fits": "The loneliness of a stock the institutions have left.",
+   "yt": "ikZp7S19-eo",
+   "yt_title": "Tanhayee - Lyrical Video | Dil Chahta Hai | Sonu Nigam | Javed Akhtar | Amir Khan,Preity Z"
+  },
+  {
+   "title": "Luka Chuppi",
+   "artist": "Lata Mangeshkar & A.R. Rahman (RDB)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.2,
+   "era": "2006",
+   "why_it_fits": "A requiem for the earnings estimates that never came home.",
+   "yt": "WjjKlwt0UNk",
+   "yt_title": "Luka Chuppi - Lyrical Song | Rang De Basanti | Aamir Khan | Lata Mangeshkar | A.R. Rahman"
+  },
+  {
+   "title": "Agar Tum Saath Ho",
+   "artist": "Alka Yagnik & Arijit Singh (Tamasha)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "2015",
+   "why_it_fits": "Pleading with a stock that keeps hurting you.",
+   "yt": "sK7riqg2mr4",
+   "yt_title": "Agar Tum Saath Ho FULL AUDIO Song | Tamasha | Ranbir Kapoor, Deepika Padukone | T-Series"
+  },
+  {
+   "title": "Jaane Woh Kaise Log The",
+   "artist": "Hemant Kumar (Pyaasa)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.25,
+   "era": "1957",
+   "why_it_fits": "Who were these people who got growth? We got impairments.",
+   "yt": "93evoW782eg",
+   "yt_title": "Jane Woh Kaise Log The | Pyaasa | Hemant Kumar | S.D. Burman"
+  },
+  {
+   "title": "Mera Jeevan Kora Kagaz",
+   "artist": "Kishore Kumar (Kora Kagaz)",
+   "lang": "hi",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1974",
+   "why_it_fits": "The book, blank where the earnings should have been.",
+   "yt": "RJAdgU8ddpE",
+   "yt_title": "Mera jeevan Kora with lyrics | मेरा जीवन कोरा के बोल | Jaya Bachchan | Kishore Kumar"
+  },
+  {
+   "title": "Hurt",
+   "artist": "Johnny Cash",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.25,
+   "era": "2002",
+   "why_it_fits": "The empire of dirt on the balance sheet, surveyed honestly.",
+   "yt": "8AHCfZTRGiI",
+   "yt_title": "Johnny Cash - Hurt"
+  },
+  {
+   "title": "Everybody Hurts",
+   "artist": "R.E.M.",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1992",
+   "why_it_fits": "Hold on — sector-wide pain, no one spared.",
+   "yt": "5rOiW_xY-kc",
+   "yt_title": "R.E.M. - Everybody Hurts (Official HD Music Video)"
+  },
+  {
+   "title": "The Sound of Silence",
+   "artist": "Simon & Garfunkel",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1964",
+   "why_it_fits": "Management took no questions on the call.",
+   "yt": "5DN_4hkuMrk",
+   "yt_title": "Simon & Garfunkel  - The Sound of Silence"
+  },
+  {
+   "title": "Yesterday",
+   "artist": "The Beatles",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1965",
+   "why_it_fits": "All the moats seemed so permanent yesterday.",
+   "yt": "wXTJBr9tt8Q",
+   "yt_title": "The Beatles - Yesterday (Live With Spoken Word Intro, New York) [Remastered 2015]"
+  },
+  {
+   "title": "House of the Rising Sun",
+   "artist": "The Animals",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.4,
+   "era": "1964",
+   "why_it_fits": "Ruin built on borrowed money. Tell the children not to do what I have done.",
+   "yt": "N4bFqW_eu2I",
+   "yt_title": "The Animals - House Of The Rising Sun (Music Video) [4K HD]"
+  },
+  {
+   "title": "Nothing Compares 2 U",
+   "artist": "Sinéad O'Connor",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1990",
+   "why_it_fits": "Nothing compares to the margins of three years ago.",
+   "yt": "0-EF60neguk",
+   "yt_title": "Sinéad O'Connor - Nothing Compares 2 U (Official Music Video) [HD]"
+  },
+  {
+   "title": "Losing My Religion",
+   "artist": "R.E.M.",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.45,
+   "era": "1991",
+   "why_it_fits": "The institutions are losing faith, holder by holder.",
+   "yt": "xwtdhWltSIg",
+   "yt_title": "R.E.M. - Losing My Religion (Official HD Music Video)"
+  },
+  {
+   "title": "Comfortably Numb",
+   "artist": "Pink Floyd",
+   "lang": "en",
+   "moods": [
+    "distress"
+   ],
+   "energy": 0.3,
+   "era": "1979",
+   "why_it_fits": "The pain faded into numbness around the third profit warning.",
+   "yt": "sFACq9-ZAzk",
+   "yt_title": "#ComfortablyNumb #Live8 #pinkfloyd"
+  },
+  {
+   "title": "Jhooth Bole Kauwa Kaate",
+   "artist": "Lata & Shailendra Singh (Bobby)",
+   "lang": "hi",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.7,
+   "era": "1973",
+   "why_it_fits": "Lie and the crow bites. The headline beat that the cash flow contradicts.",
+   "yt": "Rvwe3JjRk_E",
+   "yt_title": "Jhoot Bole Kauva with lyrics | झूठ बोले कौवा काटे गाने के बोल |Bobby| Rishi Kapoor, Dimple Kapadia"
+  },
+  {
+   "title": "Paisa Yeh Paisa",
+   "artist": "Kishore Kumar (Karz)",
+   "lang": "hi",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.75,
+   "era": "1980",
+   "why_it_fits": "Money everywhere in the gross numbers, nowhere in the net.",
+   "yt": "QwVEFR2NHPk",
+   "yt_title": "Paisa Yeh Paisa | Karz | Rishi Kapoor | Kishore Kumar | 80's Hindi Hit Songs |  Hindi Old Songs"
+  },
+  {
+   "title": "Dil To Bachcha Hai Ji",
+   "artist": "Rahat Fateh Ali Khan (Ishqiya)",
+   "lang": "hi",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.5,
+   "era": "2010",
+   "why_it_fits": "The heart is a child — it believes the investor presentation.",
+   "yt": "hQ3dcgFKPIY",
+   "yt_title": "Dil To Bachcha Hai Ji HD 5.1 Sound ll Ishqiya 2010 ll Rahat Fateh Ali Khan ll 4k & 1080p HD ll"
+  },
+  {
+   "title": "Sapne Mein Milti Hai",
+   "artist": "Suresh Wadkar & Asha Bhosle (Satya)",
+   "lang": "hi",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.6,
+   "era": "1998",
+   "why_it_fits": "The profitability exists — but only in the projections.",
+   "yt": "zqeh5RQ-SFk",
+   "yt_title": "Sapne Mein Milti Hai - HD VIDEO | Satya | Asha Bhosle & Suresh Wadkar | Best of Asha Bhosle Songs"
+  },
+  {
+   "title": "Yeh Duniya Agar Mil Bhi Jaaye",
+   "artist": "Mohammed Rafi (Pyaasa)",
+   "lang": "hi",
+   "moods": [
+    "illusion",
+    "distress"
+   ],
+   "energy": 0.4,
+   "era": "1957",
+   "why_it_fits": "Win the whole optical world — so what? The cash never came.",
+   "yt": "G1dctrflVuo",
+   "yt_title": "Ye Mahalon Ye Takton Ye Taajon Ki Duniyaa | Mohammed Rafi Hit Songs | Guru Dutt | Pyaasa (1957)"
+  },
+  {
+   "title": "Money for Nothing",
+   "artist": "Dire Straits",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.7,
+   "era": "1985",
+   "why_it_fits": "Revenue for nothing and the take-rate ain't free.",
+   "yt": "wTP2RUD_cL0",
+   "yt_title": "Dire Straits - Money For Nothing (Official Music Video)"
+  },
+  {
+   "title": "The Great Pretender",
+   "artist": "The Platters",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.45,
+   "era": "1955",
+   "why_it_fits": "Adjusted-EBITDA in three-part harmony.",
+   "yt": "RBj2HN2uuNA",
+   "yt_title": "The Platters - The Great Pretender (1959) 4K"
+  },
+  {
+   "title": "Smooth Criminal",
+   "artist": "Michael Jackson",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.8,
+   "era": "1987",
+   "why_it_fits": "The one-offs hit so smoothly you almost didn't notice. Annie, are the auditors OK?",
+   "yt": "-Lbr-nG-UoY",
+   "yt_title": "MICHAEL JACKSON — Smooth Criminal, The Coolest Man Alive"
+  },
+  {
+   "title": "Sweet Dreams (Are Made of This)",
+   "artist": "Eurythmics",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.7,
+   "era": "1983",
+   "why_it_fits": "Everybody's looking for something — mostly the missing OCF.",
+   "yt": "qeMFqkcPYcg",
+   "yt_title": "Eurythmics, Annie Lennox, Dave Stewart - Sweet Dreams (Are Made Of This) (Official Video)"
+  },
+  {
+   "title": "Fake Plastic Trees",
+   "artist": "Radiohead",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.3,
+   "era": "1995",
+   "why_it_fits": "It looks like real growth. It wears like real growth. It isn't.",
+   "yt": "n5h0qHwNrHk",
+   "yt_title": "Radiohead - Fake Plastic Trees"
+  },
+  {
+   "title": "Smooth Operator",
+   "artist": "Sade",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.55,
+   "era": "1984",
+   "why_it_fits": "The promoter's diagonal from gross GMV to adjusted contribution profit.",
+   "yt": "4TYv2PhG89A",
+   "yt_title": "Sade - Smooth Operator - Official - 1984"
+  },
+  {
+   "title": "Hotel California",
+   "artist": "Eagles",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.55,
+   "era": "1976",
+   "why_it_fits": "You can book the revenue any time you like, but the cash never leaves.",
+   "yt": "dLl4PZtxia8",
+   "yt_title": "Eagles - Hotel California (Official Audio)"
+  },
+  {
+   "title": "The Grand Illusion",
+   "artist": "Styx",
+   "lang": "en",
+   "moods": [
+    "illusion"
+   ],
+   "energy": 0.65,
+   "era": "1977",
+   "why_it_fits": "The title says it. Deep inside we're all the same take-rate.",
+   "yt": "aIuCdQtNBgg",
+   "yt_title": "The Grand Illusion"
+  },
+  {
+   "title": "Yeh Kya Hua",
+   "artist": "Kishore Kumar (Amar Prem)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.4,
+   "era": "1972",
+   "why_it_fits": "What happened, how, when, why — the guidance-cut con call in one mukhda.",
+   "yt": "BmAoNKeI6ZQ",
+   "yt_title": "Yeh Kya Hua with lyrics | ये क्या हुआ गाने के बोल | Amar Prem | Rajesh Khanna/Sharmila Tagore"
+  },
+  {
+   "title": "Kasme Vaade Pyaar Wafa",
+   "artist": "Manna Dey (Upkar)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.35,
+   "era": "1967",
+   "why_it_fits": "Promises and guidance — all things that console; what of them came true?",
+   "yt": "FsOsr28ZyRg",
+   "yt_title": "Kasme Waade Pyar Wafa - Mannade - Upkaar (1967) - FULL VERSION"
+  },
+  {
+   "title": "Chingari Koi Bhadke",
+   "artist": "Kishore Kumar (Amar Prem)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.35,
+   "era": "1972",
+   "why_it_fits": "When the protector starts the fire — promoter pledges, anyone?",
+   "yt": "VeC9L7XS4og",
+   "yt_title": "Chingari Koi Bhadke - (Lyrics) | Kishore Kumar | Amar Prem | Rajesh Khanna | Old Hindi Song"
+  },
+  {
+   "title": "Aaj Mausam Bada Beimaan Hai",
+   "artist": "Mohammed Rafi (Loafer)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.5,
+   "era": "1973",
+   "why_it_fits": "The weather turned treacherous mid-quarter.",
+   "yt": "mIYyt2uf_g0",
+   "yt_title": "Aaj Mausam Bada…Mohd Rafi | Movie: Loafer (1973)"
+  },
+  {
+   "title": "Kya Se Kya Ho Gaya",
+   "artist": "Mohammed Rafi (Guide)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.4,
+   "era": "1965",
+   "why_it_fits": "What it was, what it became — between two con-calls.",
+   "yt": "vTTWTQa3H1E",
+   "yt_title": "Kya Se Kya Ho Gaya Tere Pyar Mein - GUIDE"
+  },
+  {
+   "title": "Zindagi Kaisi Hai Paheli",
+   "artist": "Manna Dey (Anand)",
+   "lang": "hi",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.45,
+   "era": "1971",
+   "why_it_fits": "Life's riddle: guidance raised in October, withdrawn in January.",
+   "yt": "cP44iDZZ_wY",
+   "yt_title": "Zindagi Kaisi Hai Paheli | Manna Dey | Anand | Rajesh Khanna | Classic Hindi Song"
+  },
+  {
+   "title": "Mad World",
+   "artist": "Gary Jules",
+   "lang": "en",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.25,
+   "era": "2001",
+   "why_it_fits": "Staring at the results screen, expressionless.",
+   "yt": "etSbOs3aUqI",
+   "yt_title": "\"Mad World\" (feat. Gary Jules) - Official Music Video"
+  },
+  {
+   "title": "Boulevard of Broken Dreams",
+   "artist": "Green Day",
+   "lang": "en",
+   "moods": [
+    "shock",
+    "distress"
+   ],
+   "energy": 0.5,
+   "era": "2004",
+   "why_it_fits": "Walking alone after the 18% gap-down.",
+   "yt": "Soa3gO7tL-c",
+   "yt_title": "Green Day - Boulevard Of Broken Dreams [Official Music Video] [4K Upgrade]"
+  },
+  {
+   "title": "Zombie",
+   "artist": "The Cranberries",
+   "lang": "en",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.7,
+   "era": "1994",
+   "why_it_fits": "The write-off that keeps clawing back, in your head.",
+   "yt": "6Ejga4kJUts",
+   "yt_title": "The Cranberries - Zombie (Official Music Video)"
+  },
+  {
+   "title": "It's the End of the World as We Know It",
+   "artist": "R.E.M.",
+   "lang": "en",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.8,
+   "era": "1987",
+   "why_it_fits": "Guidance pulled — and the promoter feels fine.",
+   "yt": "Z0GFRcFm-aY",
+   "yt_title": "R.E.M. - It's The End Of The World"
+  },
+  {
+   "title": "Free Fallin'",
+   "artist": "Tom Petty",
+   "lang": "en",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.55,
+   "era": "1989",
+   "why_it_fits": "The chart after the exchange filing.",
+   "yt": "1lWJXDG2i0A",
+   "yt_title": "Tom Petty - Free Fallin'"
+  },
+  {
+   "title": "Landslide",
+   "artist": "Fleetwood Mac",
+   "lang": "en",
+   "moods": [
+    "shock"
+   ],
+   "energy": 0.35,
+   "era": "1975",
+   "why_it_fits": "Watched the estimates come down — well, the landslide brought them down.",
+   "yt": "WM7-PYtXtJM",
+   "yt_title": "Fleetwood Mac - Landslide (Live) (Official Video) [HD]"
+  },
+  {
+   "title": "Bohemian Rhapsody",
+   "artist": "Queen",
+   "lang": "en",
+   "moods": [
+    "shock",
+    "illusion"
+   ],
+   "energy": 0.6,
+   "era": "1975",
+   "why_it_fits": "Is this the real life? Is this just adjusted EBITDA?",
+   "yt": "Sh6kJ4XmXOU",
+   "yt_title": "Queen – Bohemian Rhapsody (Official Video Remastered)"
+  }
+ ]
 }

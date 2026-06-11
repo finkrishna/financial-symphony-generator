@@ -334,10 +334,16 @@ async function judge() {
   document.getElementById('song').innerHTML = '«' + j.anthem.title + '» — ' + j.anthem.artist +
     ' (' + j.anthem.era + ') &nbsp; <a target="_blank" href="' + j.anthem.youtube + '">open on YouTube</a>';
   document.getElementById('why').textContent = j.anthem.why_it_fits;
-  // embedded YouTube search-playlist: the actual song via YouTube's own
-  // player and licenses — the legal way to "play it directly"
-  document.getElementById('yt').src = 'https://www.youtube.com/embed?listType=search&list=' +
-    encodeURIComponent(j.anthem.title + ' ' + j.anthem.artist);
+  // direct embed of the curated video id (songbank "yt" field) — plays the
+  // actual song via YouTube's own player and licenses
+  const wrap = document.querySelector('.ytwrap');
+  if (j.anthem.yt) {
+    wrap.style.display = 'block';
+    document.getElementById('yt').src = 'https://www.youtube.com/embed/' + j.anthem.yt;
+  } else {
+    wrap.style.display = 'none';
+    document.getElementById('yt').src = '';
+  }
   document.getElementById('runners').innerHTML = j.runners_up.length ?
     'Also considered: ' + j.runners_up.map(s=>'«'+s.title+'» ('+s.artist+')').join('; ') : '';
   document.getElementById('scores').textContent = Object.entries(v.scores)
