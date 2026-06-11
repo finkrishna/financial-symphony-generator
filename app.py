@@ -144,42 +144,104 @@ PAGE = """<!doctype html>
 <style>
   :root { --bg:#101418; --panel:#1a2128; --ink:#d7e0e8; --dim:#7d8b99; --acc:#5dd39e; --warn:#e8a87c; }
   * { box-sizing:border-box; }
-  body { background:var(--bg); color:var(--ink); font:16px/1.55 "Georgia", serif; margin:0; padding:2rem 1rem 4rem; }
-  main { max-width:780px; margin:0 auto; }
-  h1 { font-size:1.7rem; margin:0 0 .2rem; }
-  .panic { color:var(--acc); font-size:.85rem; letter-spacing:.25em; }
-  .sub { color:var(--dim); margin:.3rem 0 1.6rem; }
-  .panel { background:var(--panel); border-radius:10px; padding:1.2rem; margin-bottom:1.2rem; }
-  textarea { width:100%; height:200px; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
+  body { background:var(--bg); color:var(--ink); font:16px/1.55 "Georgia", serif; margin:0; padding:1.5rem 1rem 4rem; }
+  main { max-width:760px; margin:0 auto; }
+  h1 { font-size:1.6rem; margin:0; }
+  .panic { color:var(--acc); font-size:.8rem; letter-spacing:.25em; }
+  .sub { color:var(--dim); margin:.2rem 0 .8rem; font-size:.95rem; }
+  .quotestrip { color:var(--dim); font-style:italic; font-size:.85rem; margin:0 0 1.2rem;
+                cursor:pointer; min-height:2.4em; }
+  .panel { background:var(--panel); border-radius:10px; padding:1.1rem 1.2rem; margin-bottom:1rem; }
+  .fetchrow { display:flex; gap:.5rem; }
+  .fetchrow input { flex:1; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
+                    border-radius:6px; padding:.6rem .7rem; font-size:1rem; min-width:0; }
+  .chips { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
+  .chips .lbl { color:var(--dim); font-size:.85rem; margin-right:.2rem; }
+  textarea { width:100%; height:180px; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
              border-radius:6px; padding:.7rem; font:13px/1.5 ui-monospace, monospace; }
   button { background:var(--acc); color:#08110c; border:0; border-radius:6px; padding:.55rem 1.1rem;
-           font-weight:bold; cursor:pointer; margin:.3rem .4rem .3rem 0; }
-  button.ghost { background:#26303a; color:var(--ink); font-weight:normal; }
-  select { background:#26303a; color:var(--ink); border:0; border-radius:6px; padding:.5rem; }
-  .grade { font-size:2.6rem; color:var(--acc); }
+           font-weight:bold; cursor:pointer; }
+  button.ghost { background:#26303a; color:var(--ink); font-weight:normal; padding:.4rem .8rem;
+                 font-size:.85rem; }
+  select { background:#26303a; color:var(--ink); border:0; border-radius:6px; padding:.45rem; }
+  .grade { font-size:2.4rem; color:var(--acc); }
   .mood { text-transform:uppercase; letter-spacing:.15em; color:var(--warn); }
-  .flag { color:var(--warn); }
+  .flag { color:var(--warn); font-size:.9rem; }
   .why { color:var(--dim); font-style:italic; }
   a { color:var(--acc); }
-  .bar { color:var(--acc); font-family:ui-monospace, monospace; }
-  footer { color:var(--dim); font-size:.8rem; margin-top:2.5rem; text-align:center; }
+  .bar { color:var(--acc); font-family:ui-monospace, monospace; font-size:.85rem;
+         white-space:pre-wrap; }
+  details { margin-top:.8rem; }
+  summary { color:var(--dim); cursor:pointer; font-size:.9rem; }
+  details[open] summary { margin-bottom:.5rem; }
+  footer { color:var(--dim); font-size:.75rem; margin-top:2rem; text-align:center; }
   #out { display:none; }
+  #busy { display:none; color:var(--dim); font-size:.9rem; }
+  .ytwrap { position:relative; width:100%; aspect-ratio:16/9; margin:.6rem 0 .3rem; }
+  .ytwrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:8px; }
   .tribute { display:flex; gap:1rem; align-items:flex-start; }
-  .tribute img { border-radius:8px; width:110px; }
-  .tribute blockquote { margin:0 0 .4rem; font-style:italic; cursor:pointer; }
+  .tribute img { border-radius:8px; width:100px; }
+  .tribute blockquote { margin:0 0 .4rem; font-style:italic; }
   .tribute cite { color:var(--dim); font-size:.85rem; }
   .dnaname { color:var(--dim); font-size:.8rem; margin-top:.6rem; }
-  .marvin { margin:0; width:130px; flex-shrink:0; }
-  .marvin img { width:130px; }
-  .marvin figcaption { color:var(--dim); font-size:.7rem; font-style:italic; }
-  .ytwrap { position:relative; width:100%; aspect-ratio:16/9; margin:.6rem 0; }
-  .ytwrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:8px; }
+  .marvin { margin:0; width:120px; flex-shrink:0; }
+  .marvin img { width:120px; }
+  .marvin figcaption { color:var(--dim); font-size:.68rem; font-style:italic; }
   @media (max-width:640px) { .tribute { flex-wrap:wrap; } }
 </style></head><body><main>
+
 <h1>🎼 Financial Symphony Generator</h1>
 <div class="panic">DON'T PANIC</div>
-<p class="sub">Feed it a quarterly result. A disciplined-analyst rules engine judges it —
-then tells you <em>the song</em>. Largely harmless.</p>
+<p class="sub">Feed it a quarterly result. A disciplined-analyst engine judges it — then tells you <em>the song</em>.</p>
+<p class="quotestrip" id="quotestrip" onclick="nextQuote()" title="click for another"></p>
+
+<div class="panel">
+  <div class="fetchrow">
+    <input id="ticker" placeholder="Type an NSE/BSE ticker — RELIANCE, GIPCL, ETERNAL…"
+           onkeydown="if(event.key==='Enter')fetchTicker()">
+    <button onclick="fetchTicker()">Judge it</button>
+  </div>
+  <div class="chips">
+    <span class="lbl">or try an archetype:</span>
+    <span id="exbtns"></span>
+    <span style="flex:1"></span>
+    <select id="lang"><option value="">any language</option>
+      <option value="hi">Hindi anthem</option><option value="en">English anthem</option></select>
+  </div>
+  <div id="busy">consulting Deep Thought…</div>
+</div>
+
+<div class="panel" id="out">
+  <div><span class="grade" id="grade"></span> &nbsp; <span class="mood" id="mood"></span>
+       <span style="color:var(--dim);font-size:.85rem" id="intensity"></span></div>
+  <p id="headline" style="margin:.4rem 0"></p>
+  <div id="flags"></div>
+
+  <h3 style="margin:.9rem 0 .2rem">🎵 This quarter's anthem</h3>
+  <div id="song"></div>
+  <div class="why" id="why"></div>
+  <div class="ytwrap"><iframe id="yt" title="anthem player" allowfullscreen
+       allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div id="runners" style="color:var(--dim);font-size:.85rem"></div>
+
+  <details>
+    <summary>📋 The analyst's working — scores &amp; evidence</summary>
+    <div class="bar" id="scores"></div>
+    <ul id="evidence" style="font-size:.9rem"></ul>
+  </details>
+
+  <details>
+    <summary>🎻 B-side: the quarter itself, synthesized</summary>
+    <audio id="player" controls preload="none" style="width:100%"></audio>
+    <div style="color:var(--dim);font-size:.85rem" id="synthinfo"></div>
+  </details>
+</div>
+
+<details class="panel" style="margin-top:0">
+  <summary>🔧 Under the hood — the quarterly JSON (edit and re-judge)</summary>
+  <textarea id="payload" spellcheck="false"></textarea>
+  <div style="margin-top:.5rem"><button onclick="judge()">Judge this JSON</button></div>
+</details>
 
 <div class="panel tribute">
   <img id="dna" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Douglas_adams_portrait_cropped.jpg/250px-Douglas_adams_portrait_cropped.jpg"
@@ -195,42 +257,6 @@ then tells you <em>the song</em>. Largely harmless.</p>
     <figcaption>Marvin (artist's impression — the studio owns the real one).
     Here I am, brain the size of a planet, and they ask me to rate quarterly results.</figcaption>
   </figure>
-</div>
-
-<div class="panel">
-  <div style="margin-bottom:.7rem">
-    <input id="ticker" placeholder="NSE/BSE ticker, e.g. RELIANCE, GIPCL, ETERNAL"
-           style="background:#0c1014;color:var(--ink);border:1px solid #2c3640;border-radius:6px;padding:.55rem;width:60%"
-           onkeydown="if(event.key==='Enter')fetchTicker()">
-    <button onclick="fetchTicker()">Fetch &amp; judge</button>
-  </div>
-  <div id="exbtns">Loading archetypes…</div>
-  <textarea id="payload" spellcheck="false"></textarea>
-  <div style="margin-top:.6rem">
-    <select id="lang"><option value="">any language</option>
-      <option value="hi">Hindi anthem</option><option value="en">English anthem</option></select>
-    <button onclick="judge()">Judge this quarter</button>
-    <span id="busy" style="display:none;color:var(--dim)">consulting Deep Thought…</span>
-  </div>
-</div>
-
-<div class="panel" id="out">
-  <div><span class="grade" id="grade"></span> &nbsp; <span class="mood" id="mood"></span>
-       <span style="color:var(--dim)" id="intensity"></span></div>
-  <p id="headline"></p>
-  <div class="bar" id="scores"></div>
-  <ul id="evidence"></ul>
-  <div id="flags"></div>
-  <hr style="border-color:#2c3640">
-  <h3 style="margin:.4rem 0">🎵 This quarter's anthem</h3>
-  <div id="song"></div>
-  <div class="why" id="why"></div>
-  <div class="ytwrap"><iframe id="yt" title="anthem player" allowfullscreen
-       allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-  <div id="runners" style="color:var(--dim);font-size:.9rem;margin-top:.4rem"></div>
-  <h3 style="margin:1rem 0 .4rem">🎻 B-side: the quarter itself, synthesized</h3>
-  <audio id="player" controls style="width:100%"></audio>
-  <div style="color:var(--dim);font-size:.85rem" id="synthinfo"></div>
 </div>
 
 <footer>Share and Enjoy — a tribute to Douglas Adams from the Complaints Division of the
@@ -253,8 +279,10 @@ const QUOTES = [
 ];
 let qi = Math.floor(Math.random() * QUOTES.length);
 function showQuote() {
-  document.getElementById('quote').textContent = '“' + QUOTES[qi][0] + '”';
-  document.getElementById('qsource').textContent = '— ' + QUOTES[qi][1];
+  const q = '“' + QUOTES[qi][0] + '”', s = '— ' + QUOTES[qi][1];
+  document.getElementById('quote').textContent = q;
+  document.getElementById('qsource').textContent = s;
+  document.getElementById('quotestrip').textContent = q + ' ' + s;
 }
 function nextQuote() { qi = (qi + 1) % QUOTES.length; showQuote(); }
 showQuote();
@@ -262,58 +290,64 @@ showQuote();
 let EX = {};
 fetch('/examples').then(r=>r.json()).then(ex => {
   EX = ex;
-  const div = document.getElementById('exbtns'); div.innerHTML = '';
+  const div = document.getElementById('exbtns');
   for (const name of Object.keys(ex)) {
     const b = document.createElement('button'); b.className = 'ghost';
     b.textContent = name.replaceAll('_',' ');
-    b.onclick = () => document.getElementById('payload').value = JSON.stringify(ex[name], null, 2);
+    b.onclick = () => { document.getElementById('payload').value = JSON.stringify(ex[name], null, 2); judge(); };
     div.appendChild(b);
   }
   document.getElementById('payload').value = JSON.stringify(ex[Object.keys(ex)[0]], null, 2);
 });
+
+function busy(on) { document.getElementById('busy').style.display = on ? 'block' : 'none'; }
+
 async function fetchTicker() {
   const t = document.getElementById('ticker').value.trim();
   if (!t) return;
-  document.getElementById('busy').style.display = 'inline';
+  busy(true);
   const r = await fetch('/fetch/' + encodeURIComponent(t));
   const j = await r.json();
-  document.getElementById('busy').style.display = 'none';
+  busy(false);
   if (j.error) { alert(j.error); return; }
   document.getElementById('payload').value = JSON.stringify(j, null, 2);
   judge();
 }
+
 async function judge() {
   let d; try { d = JSON.parse(document.getElementById('payload').value); }
   catch { alert('That is not JSON. This must be Thursday.'); return; }
-  document.getElementById('busy').style.display = 'inline';
+  busy(true);
   const r = await fetch('/judge', {method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({data:d, lang:document.getElementById('lang').value || undefined})});
   const j = await r.json();
-  document.getElementById('busy').style.display = 'none';
+  busy(false);
   if (j.error) { alert(j.error); return; }
   const v = j.verdict;
-  document.getElementById('out').style.display = 'block';
+  const out = document.getElementById('out');
+  out.style.display = 'block';
   document.getElementById('grade').textContent = v.grade;
   document.getElementById('mood').textContent = v.mood.replaceAll('_',' ');
   document.getElementById('intensity').textContent = ' intensity ' + v.intensity.toFixed(2);
   document.getElementById('headline').textContent = v.headline;
-  document.getElementById('scores').textContent = Object.entries(v.scores)
-    .map(([k,s]) => k.replaceAll('_',' ') + ' ' + '█'.repeat(s) + '·'.repeat(10-s)).join('   ');
-  document.getElementById('evidence').innerHTML = v.key_evidence.map(e=>'<li>'+e+'</li>').join('');
   document.getElementById('flags').innerHTML = v.red_flags.map(f=>'<div class="flag">⚠ '+f+'</div>').join('');
   document.getElementById('song').innerHTML = '«' + j.anthem.title + '» — ' + j.anthem.artist +
     ' (' + j.anthem.era + ') &nbsp; <a target="_blank" href="' + j.anthem.youtube + '">open on YouTube</a>';
   document.getElementById('why').textContent = j.anthem.why_it_fits;
-  // embedded YouTube search-playlist: plays the actual song via YouTube's
-  // own player and licenses — the legal way to "play it directly"
+  // embedded YouTube search-playlist: the actual song via YouTube's own
+  // player and licenses — the legal way to "play it directly"
   document.getElementById('yt').src = 'https://www.youtube.com/embed?listType=search&list=' +
     encodeURIComponent(j.anthem.title + ' ' + j.anthem.artist);
   document.getElementById('runners').innerHTML = j.runners_up.length ?
     'Also considered: ' + j.runners_up.map(s=>'«'+s.title+'» ('+s.artist+')').join('; ') : '';
+  document.getElementById('scores').textContent = Object.entries(v.scores)
+    .map(([k,s]) => k.replaceAll('_',' ').padEnd(16) + '█'.repeat(s) + '·'.repeat(10-s) + ' ' + s + '/10').join('\\n');
+  document.getElementById('evidence').innerHTML = v.key_evidence.map(e=>'<li>'+e+'</li>').join('');
   document.getElementById('player').src = j.symphony.wav;
   document.getElementById('synthinfo').textContent = j.symphony.seconds + 's, ' + j.symphony.bpm +
     ' bpm, ' + j.symphony.key + ', ' + j.symphony.cadence + ' cadence' +
     (j.symphony.detune_cents ? ', detuned ' + j.symphony.detune_cents + '¢ (the accounts sound almost right)' : '');
+  out.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 </script></body></html>"""
 
