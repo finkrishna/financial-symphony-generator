@@ -1,0 +1,11 @@
+{
+  "company": "JCurve Utility",
+  "quarter": "Q4 FY26",
+  "comment": "GIPCL-shaped: heavy capex trough, leverage peaking, margins compressed — the thesis says wait for the inflection.",
+  "revenue": [820, 800, 790, 805, 795, 810, 850, 905],
+  "ebitda_margin": [0.31, 0.29, 0.26, 0.24, 0.22, 0.21, 0.22, 0.24],
+  "net_debt_to_ebitda": 4.2,
+  "ocf_to_ebitda": 0.88,
+  "eps_surprise_pct": -0.06,
+  "one_off_items": false
+}

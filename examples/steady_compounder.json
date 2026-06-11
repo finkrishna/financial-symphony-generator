@@ -1,0 +1,11 @@
+{
+  "company": "Steady Compounder Ltd",
+  "quarter": "Q4 FY26",
+  "comment": "The boring beautiful business: growing, profitable, cash-backed.",
+  "revenue": [1000, 1040, 1075, 1115, 1180, 1230, 1280, 1340],
+  "ebitda_margin": [0.24, 0.24, 0.25, 0.25, 0.26, 0.26, 0.27, 0.27],
+  "net_debt_to_ebitda": 0.4,
+  "ocf_to_ebitda": 0.95,
+  "eps_surprise_pct": 0.04,
+  "one_off_items": false
+}

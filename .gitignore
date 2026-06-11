@@ -1,0 +1,14 @@
+# PRIVATE - claude.ai chat export, never commit
+data-claude/
+
+# Generated audio
+*.wav
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Secrets & generated
+.env
+verdict_*.json

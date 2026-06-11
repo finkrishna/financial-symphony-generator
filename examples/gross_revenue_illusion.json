@@ -1,0 +1,11 @@
+{
+  "company": "Illusion Fintech",
+  "quarter": "Q4 FY26",
+  "comment": "AvenuesAI-shaped: headline revenue gallops, EPS 'beats' — but cash conversion is poor and the take rate is compressing. Listen for the detuned melody and the deceptive cadence.",
+  "revenue": [5200, 5800, 6300, 6900, 7400, 7800, 8100, 8500],
+  "ebitda_margin": [0.09, 0.085, 0.08, 0.075, 0.07, 0.068, 0.065, 0.062],
+  "net_debt_to_ebitda": 0.2,
+  "ocf_to_ebitda": 0.45,
+  "eps_surprise_pct": 0.08,
+  "one_off_items": true
+}
