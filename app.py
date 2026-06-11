@@ -20,6 +20,7 @@ from flask import Flask, jsonify, request, send_file
 import judge as judge_mod
 import songpick
 import synth
+import yfetch
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 64 * 1024  # quarterly results are small
@@ -73,6 +74,16 @@ def examples():
         with open(path) as f:
             out[os.path.splitext(os.path.basename(path))[0]] = json.load(f)
     return jsonify(out)
+
+
+@app.get("/fetch/<symbol>")
+def fetch_ticker(symbol):
+    try:
+        return jsonify(yfetch.fetch(symbol))
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 404
+    except Exception as e:
+        return jsonify({"error": f"fetch failed: {e}"}), 502
 
 
 @app.post("/judge")
@@ -185,6 +196,12 @@ then tells you <em>the song</em>. Largely harmless.</p>
 </div>
 
 <div class="panel">
+  <div style="margin-bottom:.7rem">
+    <input id="ticker" placeholder="NSE/BSE ticker, e.g. RELIANCE, GIPCL, ETERNAL"
+           style="background:#0c1014;color:var(--ink);border:1px solid #2c3640;border-radius:6px;padding:.55rem;width:60%"
+           onkeydown="if(event.key==='Enter')fetchTicker()">
+    <button onclick="fetchTicker()">Fetch &amp; judge</button>
+  </div>
   <div id="exbtns">Loading archetypes…</div>
   <textarea id="payload" spellcheck="false"></textarea>
   <div style="margin-top:.6rem">
@@ -250,6 +267,17 @@ fetch('/examples').then(r=>r.json()).then(ex => {
   }
   document.getElementById('payload').value = JSON.stringify(ex[Object.keys(ex)[0]], null, 2);
 });
+async function fetchTicker() {
+  const t = document.getElementById('ticker').value.trim();
+  if (!t) return;
+  document.getElementById('busy').style.display = 'inline';
+  const r = await fetch('/fetch/' + encodeURIComponent(t));
+  const j = await r.json();
+  document.getElementById('busy').style.display = 'none';
+  if (j.error) { alert(j.error); return; }
+  document.getElementById('payload').value = JSON.stringify(j, null, 2);
+  judge();
+}
 async function judge() {
   let d; try { d = JSON.parse(document.getElementById('payload').value); }
   catch { alert('That is not JSON. This must be Thursday.'); return; }

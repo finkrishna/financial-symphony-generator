@@ -88,8 +88,11 @@ a deterministic tiebreak so the same quarter always gets the same anthem.
 python3 app.py                # http://localhost:5050
 ```
 
-Paste a quarterly JSON (or click an archetype), get the verdict card, the
-anthem with a YouTube link, and the synthesized WAV in an audio player.
+Type an NSE/BSE ticker (RELIANCE, GIPCL, ETERNAL…) and it fetches ~5 quarters
+of as-reported fundamentals from Yahoo Finance and judges them — or paste a
+quarterly JSON / click an archetype. Verdict card, anthem with YouTube link,
+synthesized stereo WAV in an audio player. Banks/NBFCs won't fetch (no EBITDA
+framework); EPS surprise isn't available via this path so it's neutral.
 The public path uses the free offline judge; the paid Fable 5 judge answers
 only to `ONLINE_TOKEN`. Deploys to Render via `render.yaml` (free tier) —
 set `ANTHROPIC_API_KEY` and `ONLINE_TOKEN` in the dashboard.
@@ -110,6 +113,7 @@ mood rules and the songbank's range.
 | `synth.py` | Four-movement synthesizer (verdict-aware) |
 | `songpick.py` + `songbank.json` | Anthem matcher (~100 songs) |
 | `app.py` + `render.yaml` | Web app / Render deployment |
+| `yfetch.py` | Ticker → quarterly payload (Yahoo Finance fundamentals) |
 | `batch.py` | 90-instance batch demo run |
 | `symphony.py` | v1 standalone (rules-only, kept for reference) |
 | `examples/` | Three archetypes: compounder, J-curve, gross-revenue illusion |
