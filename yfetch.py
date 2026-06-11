@@ -76,6 +76,34 @@ def _company_name(symbol):
         return symbol
 
 
+_suggest_cache = {}
+
+
+def suggest(q):
+    """Ticker autocomplete via Yahoo search. Indian exchanges first."""
+    q = q.strip()[:40]
+    if len(q) < 2:
+        return []
+    key = q.lower()
+    hit = _suggest_cache.get(key)
+    if hit and time.time() - hit[0] < CACHE_TTL:
+        return hit[1]
+    j = _get("https://query1.finance.yahoo.com/v1/finance/search?q="
+             + urllib.parse.quote(q) + "&quotesCount=10&newsCount=0")
+    out = []
+    for it in j.get("quotes") or []:
+        if it.get("quoteType") != "EQUITY" or not it.get("symbol"):
+            continue
+        out.append({"symbol": it["symbol"],
+                    "name": it.get("shortname") or it.get("longname") or "",
+                    "exch": it.get("exchDisp") or it.get("exchange") or ""})
+    # NSE/BSE to the top, then the rest of the galaxy
+    out.sort(key=lambda s: 0 if s["symbol"].endswith((".NS", ".BO")) else 1)
+    out = out[:8]
+    _suggest_cache[key] = (time.time(), out)
+    return out
+
+
 def fetch(symbol):
     """Returns (payload, notes). Raises ValueError with a friendly message."""
     symbol = symbol.strip().upper()

@@ -76,6 +76,14 @@ def examples():
     return jsonify(out)
 
 
+@app.get("/suggest/<q>")
+def suggest(q):
+    try:
+        return jsonify(yfetch.suggest(q))
+    except Exception:
+        return jsonify([])  # autocomplete failing silently is fine
+
+
 @app.get("/fetch/<symbol>")
 def fetch_ticker(symbol):
     try:
@@ -153,8 +161,17 @@ PAGE = """<!doctype html>
                 cursor:pointer; min-height:2.4em; }
   .panel { background:var(--panel); border-radius:10px; padding:1.1rem 1.2rem; margin-bottom:1rem; }
   .fetchrow { display:flex; gap:.5rem; }
-  .fetchrow input { flex:1; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
-                    border-radius:6px; padding:.6rem .7rem; font-size:1rem; min-width:0; }
+  .tickerbox { position:relative; flex:1; min-width:0; }
+  .tickerbox input { width:100%; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
+                     border-radius:6px; padding:.6rem .7rem; font-size:1rem; }
+  #sugg { position:absolute; top:100%; left:0; right:0; z-index:5; background:#141a20;
+          border:1px solid #2c3640; border-radius:0 0 8px 8px; display:none; max-height:280px;
+          overflow-y:auto; }
+  #sugg .it { padding:.5rem .7rem; cursor:pointer; font-size:.92rem; }
+  #sugg .it:hover, #sugg .it.sel { background:#22303c; }
+  #sugg .sym { color:var(--acc); font-family:ui-monospace, monospace; }
+  #sugg .exch { color:var(--dim); font-size:.75rem; float:right; }
+  .ctx { color:var(--dim); font-size:.85rem; margin-bottom:.2rem; }
   .chips { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
   .chips .lbl { color:var(--dim); font-size:.85rem; margin-right:.2rem; }
   textarea { width:100%; height:180px; background:#0c1014; color:var(--ink); border:1px solid #2c3640;
@@ -197,8 +214,13 @@ PAGE = """<!doctype html>
 
 <div class="panel">
   <div class="fetchrow">
-    <input id="ticker" placeholder="Type an NSE/BSE ticker — RELIANCE, GIPCL, ETERNAL…"
-           onkeydown="if(event.key==='Enter')fetchTicker()">
+    <div class="tickerbox">
+      <input id="ticker" placeholder="Company name or ticker — Reliance, GIPCL, Eternal…"
+             autocomplete="off"
+             oninput="suggestTick()" onkeydown="if(event.key==='Enter'){hideSugg();fetchTicker();}"
+             onblur="setTimeout(hideSugg, 200)">
+      <div id="sugg"></div>
+    </div>
     <button onclick="fetchTicker()">Judge it</button>
   </div>
   <div class="chips">
@@ -212,6 +234,7 @@ PAGE = """<!doctype html>
 </div>
 
 <div class="panel" id="out">
+  <div class="ctx" id="ctx"></div>
   <div><span class="grade" id="grade"></span> &nbsp; <span class="mood" id="mood"></span>
        <span style="color:var(--dim);font-size:.85rem" id="intensity"></span></div>
   <p id="headline" style="margin:.4rem 0"></p>
@@ -302,6 +325,30 @@ fetch('/examples').then(r=>r.json()).then(ex => {
 
 function busy(on) { document.getElementById('busy').style.display = on ? 'block' : 'none'; }
 
+let suggTimer = null;
+function hideSugg() { document.getElementById('sugg').style.display = 'none'; }
+function suggestTick() {
+  clearTimeout(suggTimer);
+  const q = document.getElementById('ticker').value.trim();
+  if (q.length < 2) { hideSugg(); return; }
+  suggTimer = setTimeout(async () => {
+    const r = await fetch('/suggest/' + encodeURIComponent(q));
+    const items = await r.json();
+    const box = document.getElementById('sugg');
+    if (!items.length) { hideSugg(); return; }
+    box.innerHTML = items.map(s =>
+      '<div class="it" onmousedown="pickSugg(\\'' + s.symbol + '\\')">' +
+      '<span class="exch">' + s.exch + '</span>' +
+      '<span class="sym">' + s.symbol + '</span> &nbsp;' + s.name + '</div>').join('');
+    box.style.display = 'block';
+  }, 250);
+}
+function pickSugg(sym) {
+  document.getElementById('ticker').value = sym;
+  hideSugg();
+  fetchTicker();
+}
+
 async function fetchTicker() {
   const t = document.getElementById('ticker').value.trim();
   if (!t) return;
@@ -326,6 +373,8 @@ async function judge() {
   const v = j.verdict;
   const out = document.getElementById('out');
   out.style.display = 'block';
+  document.getElementById('ctx').textContent = j.company + ' — ' + j.quarter +
+    ' (latest reported quarter in the data)';
   document.getElementById('grade').textContent = v.grade;
   document.getElementById('mood').textContent = v.mood.replaceAll('_',' ');
   document.getElementById('intensity').textContent = ' intensity ' + v.intensity.toFixed(2);
