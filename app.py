@@ -153,11 +153,36 @@ PAGE = """<!doctype html>
   .bar { color:var(--acc); font-family:ui-monospace, monospace; }
   footer { color:var(--dim); font-size:.8rem; margin-top:2.5rem; text-align:center; }
   #out { display:none; }
+  .tribute { display:flex; gap:1rem; align-items:flex-start; }
+  .tribute img { border-radius:8px; width:110px; }
+  .tribute blockquote { margin:0 0 .4rem; font-style:italic; cursor:pointer; }
+  .tribute cite { color:var(--dim); font-size:.85rem; }
+  .dnaname { color:var(--dim); font-size:.8rem; margin-top:.6rem; }
+  .marvin { margin:0; width:130px; flex-shrink:0; }
+  .marvin img { width:130px; }
+  .marvin figcaption { color:var(--dim); font-size:.7rem; font-style:italic; }
+  @media (max-width:640px) { .tribute { flex-wrap:wrap; } }
 </style></head><body><main>
 <h1>🎼 Financial Symphony Generator</h1>
 <div class="panic">DON'T PANIC</div>
 <p class="sub">Feed it a quarterly result. A disciplined-analyst rules engine judges it —
 then tells you <em>the song</em>. Largely harmless.</p>
+
+<div class="panel tribute">
+  <img id="dna" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Douglas_adams_portrait_cropped.jpg/250px-Douglas_adams_portrait_cropped.jpg"
+       alt="Douglas Adams" title="Douglas Adams, 1952–2001">
+  <div>
+    <blockquote id="quote" onclick="nextQuote()" title="click for another"></blockquote>
+    <cite id="qsource"></cite>
+    <div class="dnaname">Douglas Adams, 1952–2001 — who knew exactly which pieces of paper were unhappy.</div>
+  </div>
+  <figure class="marvin">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/C2E2_2015_-_Marvin_the_Paranoid_Android_%2817306748285%29.jpg/250px-C2E2_2015_-_Marvin_the_Paranoid_Android_%2817306748285%29.jpg"
+         alt="Marvin the Paranoid Android (cosplay)">
+    <figcaption>Marvin (artist's impression — the studio owns the real one).
+    Here I am, brain the size of a planet, and they ask me to rate quarterly results.</figcaption>
+  </figure>
+</div>
 
 <div class="panel">
   <div id="exbtns">Loading archetypes…</div>
@@ -189,9 +214,30 @@ then tells you <em>the song</em>. Largely harmless.</p>
 
 <footer>Share and Enjoy — a tribute to Douglas Adams from the Complaints Division of the
 Sirius Cybernetics Corporation.<br>Offline rules judge: free, instant, sees no peers.
-The full Fable&nbsp;5 judge exists but costs real money, so it answers only to the keeper of the token.</footer>
+The full Fable&nbsp;5 judge exists but costs real money, so it answers only to the keeper of the token.<br>
+Photos: <a href="https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait_cropped.jpg">Douglas Adams</a>
+by Michael Hughes, <a href="https://commons.wikimedia.org/wiki/File:C2E2_2015_-_Marvin_the_Paranoid_Android_(17306748285).jpg">Marvin cosplay</a>
+by GabboT — both CC BY-SA 2.0, via Wikimedia Commons.</footer>
 </main>
 <script>
+const QUOTES = [
+  ["Most of the people were unhappy for pretty much of the time. Many solutions were suggested... but most of these were largely concerned with the movements of small green pieces of paper, which is odd because on the whole it wasn't the small green pieces of paper that were unhappy.", "The Hitchhiker's Guide to the Galaxy"],
+  ["I love deadlines. I love the whooshing noise they make as they go by.", "The Salmon of Doubt — also every guidance call, ever"],
+  ["The ships hung in the sky in much the same way that bricks don't.", "The Hitchhiker's Guide to the Galaxy"],
+  ["The Answer to the Great Question of Life, the Universe and Everything is... Forty-two.", "Deep Thought, after 7.5 million years — still faster than some audit committees"],
+  ["In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.", "The Restaurant at the End of the Universe"],
+  ["We demand rigidly defined areas of doubt and uncertainty!", "the philosophers' union — and every sell-side disclaimer"],
+  ["A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.", "Mostly Harmless"],
+  ["Time is an illusion. Lunchtime doubly so.", "The Hitchhiker's Guide to the Galaxy"]
+];
+let qi = Math.floor(Math.random() * QUOTES.length);
+function showQuote() {
+  document.getElementById('quote').textContent = '“' + QUOTES[qi][0] + '”';
+  document.getElementById('qsource').textContent = '— ' + QUOTES[qi][1];
+}
+function nextQuote() { qi = (qi + 1) % QUOTES.length; showQuote(); }
+showQuote();
+
 let EX = {};
 fetch('/examples').then(r=>r.json()).then(ex => {
   EX = ex;
