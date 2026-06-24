@@ -18,7 +18,9 @@ import uuid
 from flask import Flask, jsonify, request, send_file
 
 import judge as judge_mod
+import mediabank
 import songpick
+import syng as syng_mod
 import synth
 import yfetch
 
@@ -135,6 +137,42 @@ def judge_endpoint():
     })
 
 
+@app.post("/syng")
+def syng_endpoint():
+    """Syng — there's a song for this: any situation -> mood -> anthem.
+
+    Body: {text: "...", source?: {type,...}, online?: bool, token?: ..., lang?: hi|en}
+    The free offline path is text-only; the online oracle (Opus 4.8 + web search,
+    and image vision) is token-gated like /judge because it costs real money.
+    """
+    body = request.get_json(silent=True) or {}
+    source = body.get("source") or {"type": "text", "text": body.get("text", "")}
+
+    online = bool(body.get("online"))
+    if online:
+        token = os.environ.get("ONLINE_TOKEN")
+        if not token or body.get("token") != token:
+            return jsonify({"error": "the online oracle is token-gated (it costs real money). "
+                                     "Omit 'online' for the free offline read."}), 403
+
+    lang = body.get("lang") if body.get("lang") in ("hi", "en") else None
+    try:
+        result = syng_mod.syng(source, offline=not online, lang=lang)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"error": f"the jukebox jammed: {e}"}), 502
+
+    song, runners = result["match"], result["runners"]
+    return jsonify({
+        "input_kind": result["situation"]["input_kind"],
+        "verdict": result["verdict"],
+        "anthem": {**song, "youtube": mediabank.play_link(song)},
+        "runners_up": [{**s, "youtube": mediabank.play_link(s)} for s in runners],
+        "judge": "opus-4-8-online" if online else "offline-rules",
+    })
+
+
 @app.get("/wav/<wav_id>")
 def wav(wav_id):
     if not (len(wav_id) == 32 and all(c in "0123456789abcdef" for c in wav_id)):
@@ -148,7 +186,7 @@ def wav(wav_id):
 PAGE = """<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Financial Symphony Generator — there's a song for this</title>
+<title>Financial Symphony Generator — Syng</title>
 <style>
   :root { --bg:#101418; --panel:#1a2128; --ink:#d7e0e8; --dim:#7d8b99; --acc:#5dd39e; --warn:#e8a87c; }
   * { box-sizing:border-box; }
@@ -209,8 +247,35 @@ PAGE = """<!doctype html>
 
 <h1>🎼 Financial Symphony Generator</h1>
 <div class="panic">DON'T PANIC</div>
-<p class="sub">Feed it a quarterly result. A disciplined-analyst engine judges it — then tells you <em>the song</em>.</p>
+<p class="sub">Point <strong>Syng</strong> at <em>anything</em> — a tweet, a headline, a situation — and it finds the song for it.
+Or feed it a company's quarter and let the analyst-engine judge that instead.</p>
 <p class="quotestrip" id="quotestrip" onclick="nextQuote()" title="click for another"></p>
+
+<div class="panel" id="syng">
+  <textarea id="situation" style="height:90px" spellcheck="false"
+    placeholder="Paste a tweet, a headline, a situation — anything.
+e.g. “We finally shipped it after eighteen months.”  ·  “Record ‘profit’ — all of it a one-off tax write-back.”"></textarea>
+  <div class="chips">
+    <button onclick="syng()">🎵 Syng — there's a song for this</button>
+    <span style="flex:1"></span>
+    <select id="vlang"><option value="">any language</option>
+      <option value="hi">Hindi</option><option value="en">English</option></select>
+  </div>
+  <div id="vbusy" style="display:none;color:var(--dim);font-size:.9rem">reading the room…</div>
+</div>
+
+<div class="panel" id="vibeout" style="display:none">
+  <div><span class="mood" id="vmood"></span>
+       <span style="color:var(--dim);font-size:.85rem" id="vintensity"></span>
+       <span class="ctx" id="vkind"></span></div>
+  <p id="vread" style="margin:.4rem 0;font-style:italic"></p>
+  <h3 style="margin:.9rem 0 .2rem">🎵 Syng's pick</h3>
+  <div id="vsong"></div>
+  <div class="why" id="vwhy"></div>
+  <div class="ytwrap" id="vytwrap"><iframe id="vyt" title="anthem player" allowfullscreen
+       allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div id="vrunners" style="color:var(--dim);font-size:.85rem"></div>
+</div>
 
 <div class="panel">
   <div class="fetchrow">
@@ -243,7 +308,7 @@ PAGE = """<!doctype html>
   <h3 style="margin:.9rem 0 .2rem">🎵 This quarter's anthem</h3>
   <div id="song"></div>
   <div class="why" id="why"></div>
-  <div class="ytwrap"><iframe id="yt" title="anthem player" allowfullscreen
+  <div class="ytwrap" id="ytwrap"><iframe id="yt" title="anthem player" allowfullscreen
        allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   <div id="runners" style="color:var(--dim);font-size:.85rem"></div>
 
@@ -325,6 +390,41 @@ fetch('/examples').then(r=>r.json()).then(ex => {
 
 function busy(on) { document.getElementById('busy').style.display = on ? 'block' : 'none'; }
 
+async function syng() {
+  const text = document.getElementById('situation').value.trim();
+  if (!text) { alert('Give me a situation first — a tweet, a headline, anything.'); return; }
+  document.getElementById('vbusy').style.display = 'block';
+  let j;
+  try {
+    const r = await fetch('/syng', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({text, lang: document.getElementById('vlang').value || undefined})});
+    j = await r.json();
+  } catch { j = {error: 'the jukebox is unreachable. This must be Thursday.'}; }
+  document.getElementById('vbusy').style.display = 'none';
+  if (j.error) { alert(j.error); return; }
+  const v = j.verdict;
+  document.getElementById('vibeout').style.display = 'block';
+  document.getElementById('vmood').textContent = v.mood.replaceAll('_',' ');
+  document.getElementById('vintensity').textContent = 'intensity ' + v.intensity.toFixed(2);
+  document.getElementById('vkind').textContent = j.input_kind && j.input_kind !== 'text'
+    ? '· read from ' + j.input_kind : '';
+  document.getElementById('vread').textContent = v.read || '';
+  document.getElementById('vsong').innerHTML = '«' + j.anthem.title + '» — ' + j.anthem.artist +
+    ' (' + j.anthem.era + ') &nbsp; <a target="_blank" href="' + j.anthem.youtube + '">open on YouTube</a>';
+  document.getElementById('vwhy').textContent = j.anthem.why_it_fits;
+  const wrap = document.getElementById('vytwrap');
+  if (j.anthem.yt) {
+    wrap.style.display = 'block';
+    document.getElementById('vyt').src = 'https://www.youtube.com/embed/' + j.anthem.yt;
+  } else {
+    wrap.style.display = 'none';
+    document.getElementById('vyt').src = '';
+  }
+  document.getElementById('vrunners').innerHTML = j.runners_up.length ?
+    'Also considered: ' + j.runners_up.map(s=>'«'+s.title+'» ('+s.artist+')').join('; ') : '';
+  document.getElementById('vibeout').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
 let suggTimer = null;
 function hideSugg() { document.getElementById('sugg').style.display = 'none'; }
 function suggestTick() {
@@ -385,7 +485,7 @@ async function judge() {
   document.getElementById('why').textContent = j.anthem.why_it_fits;
   // direct embed of the curated video id (songbank "yt" field) — plays the
   // actual song via YouTube's own player and licenses
-  const wrap = document.querySelector('.ytwrap');
+  const wrap = document.getElementById('ytwrap');
   if (j.anthem.yt) {
     wrap.style.display = 'block';
     document.getElementById('yt').src = 'https://www.youtube.com/embed/' + j.anthem.yt;
